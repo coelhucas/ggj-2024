@@ -29,7 +29,7 @@ animations = [{
 size = Vector2(24, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
-size = Vector2(16, 30)
+size = Vector2(16, 35)
 
 [node name="Bat" type="CharacterBody2D"]
 collision_layer = 17
@@ -51,7 +51,7 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_dhuhf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_1sv12")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

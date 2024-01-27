@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Trap" load_steps=4 format=3 uid="uid://bwx82c7rw0oky"]
+[gd_resource type="Resource" script_class="Trap" load_steps=4 format=3 uid="uid://t8fanfd7lwfo"]
 
 [ext_resource type="Texture2D" uid="uid://b4ar8hst0y4r1" path="res://assets/sprites/worm.png" id="1_eykkg"]
-[ext_resource type="PackedScene" uid="uid://dggdcoktrbsoc" path="res://src/scenes/monsters/worm.tscn" id="2_ctjj7"]
+[ext_resource type="PackedScene" uid="uid://bdxyi56fpkksp" path="res://src/scenes/monsters/worm.tscn" id="2_ctjj7"]
 [ext_resource type="Script" path="res://src/resources/Trap.gd" id="3_ousit"]
 
 [resource]
@@ -10,4 +10,4 @@ icon = ExtResource("1_eykkg")
 scene = ExtResource("2_ctjj7")
 floating = false
 kind = 1
-custom_y = 9
+custom_y = 4

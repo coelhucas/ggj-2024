@@ -3,7 +3,7 @@ extends Node2D
 #@onready var sprite := $Sprite2D
 @onready var skin := $Skin
 
-var offset := 32
+var offset := Global.TILE_SIZE
 var player: Node2D
 
 func _ready() -> void:

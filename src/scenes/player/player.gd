@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const GRAVITY := 50
 const SPEED := 200
-const JUMP_FORCE := -700
+const JUMP_FORCE := -1200
 
 var invincibility_time := false
 

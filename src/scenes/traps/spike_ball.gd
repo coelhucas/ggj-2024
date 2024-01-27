@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite := $Sprite
 
-const SPEED := 500
+const SPEED := 900
 const ROT_SPEED := 20
 const GRAVITY := 50
 

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blu7gooar7fa1" path="res://assets/sprites/solid.png" id="1_r2xlq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq3v1"]
-size = Vector2(32, 32)
+size = Vector2(128, 128)
 
 [node name="Floor" type="StaticBody2D"]
 

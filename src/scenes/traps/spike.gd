@@ -12,7 +12,7 @@ func _ready() -> void:
 func attack() -> void:
 	var _t := create_tween()
 	collision_shape.disabled = false
-	_t.tween_property(self, "position:y", position.y - 32, 0.2)
+	_t.tween_property(self, "position:y", position.y - Global.TILE_SIZE, 0.2)
 	_t.tween_property(self, "position:y", _init_y, 0.2).set_delay(0.5)
 	_t.tween_callback(func():
 		collision_shape.disabled = true

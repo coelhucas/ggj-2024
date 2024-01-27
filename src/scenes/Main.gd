@@ -6,8 +6,8 @@ extends Node2D
 @onready var trap_selector := $TrapSelector
 @onready var enemy_selector := $EnemySelector
 
-const FLOOR_COORDINATE := 17
-const SPIKE_COORDINATE := 18
+const FLOOR_COORDINATE := 5
+const SPIKE_COORDINATE := 6
 
 var _removed_tiles: PackedVector2Array
 
@@ -45,7 +45,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1, _selector: Node2D = trap_selector)
 		_target_position = Vector2i(_pos.x + _additional_offset.x, SPIKE_COORDINATE)
 		
 		for spike in get_tree().get_nodes_in_group("spike"):
-			if _target_position == spike.global_position.round().snapped(Vector2.ONE * 32) / 32:
+			if _target_position == spike.global_position.round().snapped(Vector2.ONE * Global.TILE_SIZE) / Global.TILE_SIZE:
 				spike.attack()
 		
 

@@ -1,5 +1,7 @@
 extends Node
 
+const TILE_SIZE := 128
+
 signal set_player(_p)
 signal game_over(_king_win)
 signal health_update(_music_stage)

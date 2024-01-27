@@ -29,7 +29,7 @@ animations = [{
 size = Vector2(22, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
-size = Vector2(16, 27)
+size = Vector2(16, 30)
 
 [node name="Worm" type="CharacterBody2D"]
 collision_layer = 17
@@ -51,7 +51,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_dhuhf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_1sv12")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

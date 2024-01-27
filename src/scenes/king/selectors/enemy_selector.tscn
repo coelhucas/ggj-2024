@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://irmwr4ojn30u"]
 
 [ext_resource type="Script" path="res://src/scenes/king/selectors/TrapSelector.gd" id="1_wp3jm"]
-[ext_resource type="Resource" path="res://data/traps/worm.tres" id="5_msilp"]
-[ext_resource type="Resource" path="res://data/traps/bat.tres" id="6_7nwtc"]
+[ext_resource type="Resource" uid="uid://t8fanfd7lwfo" path="res://data/traps/worm.tres" id="5_msilp"]
+[ext_resource type="Resource" uid="uid://c4ufsan0s7i86" path="res://data/traps/bat.tres" id="6_7nwtc"]
 [ext_resource type="Texture2D" uid="uid://co2x7bsdwaf0m" path="res://assets/sprites/trap-light.png" id="8_14acg"]
 
 [node name="EnemySelector" type="Node2D"]
