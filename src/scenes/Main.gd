@@ -20,6 +20,9 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 	if not trap_selector.current_trap.floating:
 		_target_position.y = FLOOR_COORDINATE
 	
+	if trap_selector.current_trap.custom_y:
+		_target_position.y = trap_selector.current_trap.custom_y
+	
 	if trap_selector.current_trap.scene:
 		var _ns: Node2D = trap_selector.current_trap.scene.instantiate()
 		_ns.global_position = tilemap.map_to_local(_target_position)

@@ -11,3 +11,4 @@ enum Kind {
 @export var scene: PackedScene
 @export var floating := false
 @export var kind: Kind = Kind.STATIC
+@export var custom_y: int
