@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=7 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="PackedScene" uid="uid://c42d2c58m34o6" path="res://src/scenes/king/king.tscn" id="2_fadux"]
@@ -9,6 +9,9 @@ size = Vector2(774, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
 size = Vector2(20, 388)
+
+[sub_resource type="TileSet" id="TileSet_ofp0x"]
+tile_size = Vector2i(32, 32)
 
 [node name="Node" type="Node"]
 
@@ -43,5 +46,9 @@ position = Vector2(451, 65)
 
 [node name="TrapSelector2" parent="Main" instance=ExtResource("3_lpelj")]
 position = Vector2(184, 65)
+
+[node name="TileMap" type="TileMap" parent="Main"]
+tile_set = SubResource("TileSet_ofp0x")
+format = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
