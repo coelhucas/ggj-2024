@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=13 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bngctos3idixx" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
 [ext_resource type="PackedScene" uid="uid://e3uum565tdcm" path="res://src/scenes/traps/hole.tscn" id="7_22dcs"]
 [ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
+[ext_resource type="Script" path="res://src/scenes/ui/ui.gd" id="9_m7muy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
 size = Vector2(20, 388)
@@ -110,7 +111,38 @@ respawn = NodePath("../Marker2D")
 [node name="Marker2D" type="Marker2D" parent="Main"]
 position = Vector2(36, 209)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("9_m7muy")
+
+[node name="EndGame" type="CenterContainer" parent="UI"]
+visible = false
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/EndGame"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/EndGame/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndGame/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="UI/EndGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+
+[node name="VictoryLabel" type="Label" parent="UI/EndGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "XXX win!"
+
+[node name="BtnRestart" type="Button" parent="UI/EndGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play Again"
 
 [connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
 [connection signal="body_entered" from="Main/TileMap/@Area2D@18947" to="Main/TileMap/@Area2D@18947" method="_on_body_entered"]
