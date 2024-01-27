@@ -1,26 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwy0h73m380fd"]
+[gd_scene load_steps=8 format=3 uid="uid://b5erumf2osyiy"]
 
-[ext_resource type="Script" path="res://src/scenes/monsters/slime.gd" id="1_q3ud1"]
+[ext_resource type="Script" path="res://src/scenes/monsters/bat.gd" id="1_vnie8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hddwh"]
 load_path = "res://.godot/imported/monsters.png-b76a2307be6174f6c992095f9ad7b8a5.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_46rmg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m60p"]
 atlas = SubResource("CompressedTexture2D_hddwh")
-region = Rect2(0, 66, 66, 66)
+region = Rect2(264, 66, 66, 66)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_15pu0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf72b"]
 atlas = SubResource("CompressedTexture2D_hddwh")
-region = Rect2(66, 66, 66, 66)
+region = Rect2(330, 66, 66, 66)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8nmf0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_83lfv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_46rmg")
+"texture": SubResource("AtlasTexture_4m60p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_15pu0")
+"texture": SubResource("AtlasTexture_cf72b")
 }],
 "loop": true,
 "name": &"run",
@@ -28,18 +28,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
-size = Vector2(24, 22)
+size = Vector2(24, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
-size = Vector2(14, 13)
+size = Vector2(16, 16)
 
-[node name="Slime" type="CharacterBody2D"]
-script = ExtResource("1_q3ud1")
+[node name="Bat" type="CharacterBody2D"]
+script = ExtResource("1_vnie8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 scale = Vector2(0.454545, 0.454545)
-sprite_frames = SubResource("SpriteFrames_8nmf0")
+sprite_frames = SubResource("SpriteFrames_83lfv")
 animation = &"run"
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -47,10 +47,11 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_dhuhf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_1sv12")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
