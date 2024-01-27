@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vu55g"]
 size = Vector2(32, 32)
 
-[node name="Spike" type="Area2D"]
+[node name="Spike" type="Area2D" groups=["spike"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_toxgk")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=12 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://src/scenes/public/person2.tscn" id="6_2flqa"]
 [ext_resource type="PackedScene" uid="uid://bngctos3idixx" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
 [ext_resource type="PackedScene" uid="uid://e3uum565tdcm" path="res://src/scenes/traps/hole.tscn" id="7_22dcs"]
+[ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
 size = Vector2(20, 388)
@@ -14,6 +15,7 @@ size = Vector2(20, 388)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6dd4i"]
 resource_name = "Solid"
 scenes/1/scene = ExtResource("6_6phtl")
+scenes/2/scene = ExtResource("7_lix3d")
 
 [sub_resource type="TileSet" id="TileSet_ofp0x"]
 tile_size = Vector2i(32, 32)
@@ -98,6 +100,8 @@ tile_set = SubResource("TileSet_ofp0x")
 format = 2
 layer_0/name = "solid"
 layer_0/tile_data = PackedInt32Array(655360, 0, 65536, 655361, 0, 65536, 655362, 0, 65536, 655363, 0, 65536, 655364, 0, 65536, 655365, 0, 65536, 655366, 0, 65536, 655367, 0, 65536, 655368, 0, 65536, 655369, 0, 65536, 655370, 0, 65536, 655371, 0, 65536, 655372, 0, 65536, 655373, 0, 65536, 655374, 0, 65536, 655375, 0, 65536, 655376, 0, 65536, 655377, 0, 65536, 655378, 0, 65536, 655379, 0, 65536, 655380, 0, 65536)
+layer_1/name = "spikes"
+layer_1/tile_data = PackedInt32Array(655360, 0, 131072, 655361, 0, 131072, 655362, 0, 131072, 655363, 0, 131072, 655364, 0, 131072, 655365, 0, 131072, 655366, 0, 131072, 655367, 0, 131072, 655368, 0, 131072, 655369, 0, 131072, 655370, 0, 131072, 655371, 0, 131072, 655372, 0, 131072, 655373, 0, 131072, 655374, 0, 131072, 655375, 0, 131072, 655376, 0, 131072, 655377, 0, 131072, 655378, 0, 131072, 655379, 0, 131072)
 
 [node name="Hole" parent="Main" node_paths=PackedStringArray("respawn") instance=ExtResource("7_22dcs")]
 position = Vector2(320, 377)

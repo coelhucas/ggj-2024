@@ -9,12 +9,14 @@ extends Node2D
 var is_in_cooldown := false:
 	set(_iic):
 		is_in_cooldown = _iic
+		Global.is_in_cooldown = is_in_cooldown
 		
 		if is_in_cooldown:
 			modulate.a = 0.6
 			# TODO: definir cooldown dinâmico invés de fixo hardcoded
 			await get_tree().create_timer(0.8).timeout
 			is_in_cooldown = false
+			Global.is_in_cooldown = is_in_cooldown
 			modulate.a = 1.0
 		
 var trap_idx := 0

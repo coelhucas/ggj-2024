@@ -5,6 +5,7 @@ enum Kind {
 	STATIC,
 	MOVABLE,
 	HOLE,
+	SPIKE
 }
 
 @export var icon: Texture2D

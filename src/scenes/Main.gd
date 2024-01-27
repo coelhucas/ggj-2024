@@ -6,6 +6,7 @@ extends Node2D
 @onready var trap_selector := $TrapSelector
 
 const FLOOR_COORDINATE := 10
+const SPIKE_COORDINATE := 11
 
 var _removed_tiles: PackedVector2Array
 
@@ -37,6 +38,15 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 	
 		
 		add_child(_ns)
+	
+	if trap_selector.current_trap.kind == Trap.Kind.SPIKE:
+		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.RIGHT
+		_target_position = Vector2i(_pos.x + _additional_offset.x, SPIKE_COORDINATE)
+		
+		for spike in get_tree().get_nodes_in_group("spike"):
+			if _target_position == spike.global_position.round().snapped(Vector2.ONE * 32) / 32:
+				spike.attack()
+		
 
 	if trap_selector.current_trap.kind == Trap.Kind.HOLE:
 		# Qual tile "secundário" também será removido
@@ -44,6 +54,8 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 		_target_position = Vector2i(_pos.x, FLOOR_COORDINATE)
 		tilemap.set_cell(0, _target_position, -1)
 		tilemap.set_cell(0, _target_position + _additional_offset, -1)
+		tilemap.set_cell(1, _target_position, -1)
+		tilemap.set_cell(1, _target_position + _additional_offset, -1)
 		
 		
 		_removed_tiles.append(_target_position)
@@ -54,6 +66,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 		for i in range(_removed_tiles.size()):
 			var _idx := wrapi(_removed_tiles.size() - 1 - i, 0, _removed_tiles.size())
 			tilemap.set_cell(0, _removed_tiles[_idx], 0, Vector2i.ZERO, 1)
+			tilemap.set_cell(1, _removed_tiles[_idx], 0, Vector2i.ZERO, 2)
 			_removed_tiles.remove_at(_idx)
 
 
