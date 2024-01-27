@@ -164,6 +164,7 @@ collision_layer = 32
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Feet"]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_cvp5f")
 
 [connection signal="body_entered" from="Feet" to="." method="_on_feet_body_entered"]
