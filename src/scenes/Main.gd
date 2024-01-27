@@ -4,6 +4,7 @@ extends Node2D
 @onready var player := $Player
 @onready var king := $King
 @onready var trap_selector := $TrapSelector
+@onready var enemy_selector := $EnemySelector
 
 const FLOOR_COORDINATE := 10
 const SPIKE_COORDINATE := 11
@@ -11,24 +12,24 @@ const SPIKE_COORDINATE := 11
 var _removed_tiles: PackedVector2Array
 
 func _ready() -> void:
-	king.spawn_behind_player.connect(add_trap_behind_player)
-	king.spawn_ahead_player.connect(add_trap_ahead_player)
+	king.spawn_enemy.connect(add_enemy)
+	king.spawn_trap.connect(add_trap)
 
 
-func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
+func spawn_trap(_pos: Vector2, _dir: int = 1, _selector: Node2D = trap_selector) -> void:
 	var _target_position := _pos
 	
-	if not trap_selector.current_trap.floating:
+	if not _selector.current_trap.floating:
 		_target_position.y = FLOOR_COORDINATE
 	
-	if trap_selector.current_trap.custom_y:
-		_target_position.y = trap_selector.current_trap.custom_y
+	if _selector.current_trap.custom_y:
+		_target_position.y = _selector.current_trap.custom_y
 	
-	if trap_selector.current_trap.scene:
-		var _ns: Node2D = trap_selector.current_trap.scene.instantiate()
+	if _selector.current_trap.scene:
+		var _ns: Node2D = _selector.current_trap.scene.instantiate()
 		_ns.global_position = tilemap.map_to_local(_target_position)
 		
-		if trap_selector.current_trap.kind == Trap.Kind.MOVABLE:
+		if _selector.current_trap.kind == Trap.Kind.MOVABLE:
 			_ns.direction = _dir
 			
 			if _dir > 0:
@@ -39,7 +40,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 		
 		add_child(_ns)
 	
-	if trap_selector.current_trap.kind == Trap.Kind.SPIKE:
+	if _selector.current_trap.kind == Trap.Kind.SPIKE:
 		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.ZERO
 		_target_position = Vector2i(_pos.x + _additional_offset.x, SPIKE_COORDINATE)
 		
@@ -48,10 +49,10 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 				spike.attack()
 		
 
-	if trap_selector.current_trap.kind == Trap.Kind.LIGHT:
+	if _selector.current_trap.kind == Trap.Kind.LIGHT:
 		Global.turn_lights_off()
 	
-	if trap_selector.current_trap.kind == Trap.Kind.HOLE:
+	if _selector.current_trap.kind == Trap.Kind.HOLE:
 		# Qual tile "secundário" também será removido
 		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.LEFT
 		_target_position = Vector2i(round(_pos.x), FLOOR_COORDINATE)
@@ -73,18 +74,18 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 			_removed_tiles.remove_at(_idx)
 
 
-func add_trap_ahead_player() -> void:
+func add_trap() -> void:
 	if trap_selector.is_in_cooldown or not is_instance_valid(player): return
 	
 	var _target_position: Vector2i = tilemap.local_to_map(player.global_position) + Vector2i.RIGHT
 	trap_selector.is_in_cooldown = true
-	spawn_trap(_target_position, 1)
+	spawn_trap(_target_position, 1, trap_selector)
 	
 
-func add_trap_behind_player() -> void:
-	if trap_selector.is_in_cooldown or not is_instance_valid(player): return
+func add_enemy() -> void:
+	if enemy_selector.is_in_cooldown or not is_instance_valid(player): return
 	
 	var _target_position: Vector2i = tilemap.local_to_map(player.global_position) + Vector2i.LEFT
-	trap_selector.is_in_cooldown = true
+	enemy_selector.is_in_cooldown = true
 	
-	spawn_trap(_target_position, -1)
+	spawn_trap(_target_position, -1, enemy_selector)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://irmwr4ojn30u"]
+
+[ext_resource type="Script" path="res://src/scenes/king/selectors/TrapSelector.gd" id="1_wp3jm"]
+[ext_resource type="Resource" path="res://data/traps/worm.tres" id="5_msilp"]
+[ext_resource type="Resource" path="res://data/traps/bat.tres" id="6_7nwtc"]
+[ext_resource type="Texture2D" uid="uid://co2x7bsdwaf0m" path="res://assets/sprites/trap-light.png" id="8_14acg"]
+
+[node name="EnemySelector" type="Node2D"]
+script = ExtResource("1_wp3jm")
+traps = Array[Resource("res://src/resources/Trap.gd")]([ExtResource("5_msilp"), ExtResource("6_7nwtc")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("8_14acg")
