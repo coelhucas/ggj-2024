@@ -6,8 +6,8 @@ extends Node2D
 @onready var trap_selector := $TrapSelector
 @onready var enemy_selector := $EnemySelector
 
-const FLOOR_COORDINATE := 10
-const SPIKE_COORDINATE := 11
+const FLOOR_COORDINATE := 17
+const SPIKE_COORDINATE := 18
 
 var _removed_tiles: PackedVector2Array
 
