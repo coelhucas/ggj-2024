@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Trap" load_steps=4 format=3 uid="uid://dmt32nbjp7phs"]
+
+[ext_resource type="Texture2D" uid="uid://ca1r3nc8ve5gp" path="res://assets/sprites/bat.png" id="1_gfimm"]
+[ext_resource type="PackedScene" uid="uid://b5erumf2osyiy" path="res://src/scenes/monsters/bat.tscn" id="2_asfrb"]
+[ext_resource type="Script" path="res://src/resources/Trap.gd" id="3_14fnp"]
+
+[resource]
+script = ExtResource("3_14fnp")
+icon = ExtResource("1_gfimm")
+scene = ExtResource("2_asfrb")
+floating = false
+kind = 1
+custom_y = 9
