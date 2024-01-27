@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://teflutbqmr75"]
+
+[ext_resource type="Script" path="res://src/scenes/traps/spike_ball.gd" id="1_03u12"]
+[ext_resource type="Texture2D" uid="uid://cj28c8uyobk3o" path="res://assets/sprites/ball-spike.png" id="1_irg7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
+size = Vector2(22, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
+size = Vector2(12, 20)
+
+[node name="SpikeBall" type="CharacterBody2D"]
+script = ExtResource("1_03u12")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_irg7b")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_dhuhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1sv12")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
