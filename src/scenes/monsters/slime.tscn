@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwy0h73m380fd"]
+
+[ext_resource type="Texture2D" uid="uid://lmsxbc4sc00s" path="res://assets/sprites/monsters.png" id="1_5c30o"]
+[ext_resource type="Script" path="res://src/scenes/monsters/slime.gd" id="1_q3ud1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxjsd"]
+atlas = ExtResource("1_5c30o")
+region = Rect2(0, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gysw0"]
+atlas = ExtResource("1_5c30o")
+region = Rect2(66, 66, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0uvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxjsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gysw0")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
+size = Vector2(24, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
+size = Vector2(14, 13)
+
+[node name="SpikeBall" type="CharacterBody2D"]
+script = ExtResource("1_q3ud1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.454545, 0.454545)
+sprite_frames = SubResource("SpriteFrames_x0uvq")
+animation = &"run"
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_dhuhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_1sv12")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

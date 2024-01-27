@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdb8lk655qyjf"]
+
+[ext_resource type="Script" path="res://src/scenes/public/person.gd" id="1_1eypp"]
+[ext_resource type="Texture2D" uid="uid://bt0bwqh0spc53" path="res://assets/sprites/people.png" id="2_cpueb"]
+
+[node name="Person" type="Node2D"]
+script = ExtResource("1_1eypp")
+
+[node name="Skin" type="Sprite2D" parent="."]
+texture = ExtResource("2_cpueb")
+hframes = 24
+vframes = 32
