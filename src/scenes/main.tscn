@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=16 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://e3uum565tdcm" path="res://src/scenes/traps/hole.tscn" id="7_22dcs"]
 [ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
 [ext_resource type="Script" path="res://src/scenes/ui/ui.gd" id="9_m7muy"]
+[ext_resource type="Script" path="res://src/scenes/traps/lights.gd" id="10_q12el"]
 [ext_resource type="PackedScene" uid="uid://cmmojfh1j80hu" path="res://src/scenes/music_manager/music_manager.tscn" id="11_2bi5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
@@ -119,7 +120,9 @@ respawn = NodePath("../Marker2D")
 position = Vector2(36, 209)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
+script = ExtResource("10_q12el")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_m7muy")
@@ -155,3 +158,24 @@ layout_mode = 2
 text = "Play Again"
 
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
+
+[connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75039" to="Main/TileMap/@Area2D@75039" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75040" to="Main/TileMap/@Area2D@75040" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75041" to="Main/TileMap/@Area2D@75041" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75042" to="Main/TileMap/@Area2D@75042" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75043" to="Main/TileMap/@Area2D@75043" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75044" to="Main/TileMap/@Area2D@75044" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75045" to="Main/TileMap/@Area2D@75045" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75046" to="Main/TileMap/@Area2D@75046" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75047" to="Main/TileMap/@Area2D@75047" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75048" to="Main/TileMap/@Area2D@75048" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75049" to="Main/TileMap/@Area2D@75049" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75050" to="Main/TileMap/@Area2D@75050" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75051" to="Main/TileMap/@Area2D@75051" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75052" to="Main/TileMap/@Area2D@75052" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75053" to="Main/TileMap/@Area2D@75053" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75054" to="Main/TileMap/@Area2D@75054" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75055" to="Main/TileMap/@Area2D@75055" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75056" to="Main/TileMap/@Area2D@75056" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@75057" to="Main/TileMap/@Area2D@75057" method="_on_body_entered"]

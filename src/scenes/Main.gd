@@ -48,6 +48,9 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 				spike.attack()
 		
 
+	if trap_selector.current_trap.kind == Trap.Kind.LIGHT:
+		Global.turn_lights_off()
+	
 	if trap_selector.current_trap.kind == Trap.Kind.HOLE:
 		# Qual tile "secundário" também será removido
 		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.LEFT

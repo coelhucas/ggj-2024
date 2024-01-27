@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D
+@onready var light := $Light2D
 
 const GRAVITY := 50
 const SPEED := 200
@@ -26,6 +27,12 @@ var hp := 3:
 func _ready() -> void:
 	await get_tree().create_timer(0.1).timeout
 	Global.set_player.emit(self)
+	Global.lights_off.connect(func():
+		light.show()
+	)
+	Global.lights_on.connect(func():
+		light.hide()
+	)
 	$AnimatedSprite2D.play("idle")
 
 
