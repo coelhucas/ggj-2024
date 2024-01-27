@@ -71,7 +71,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 
 
 func add_trap_ahead_player() -> void:
-	if trap_selector.is_in_cooldown: return
+	if trap_selector.is_in_cooldown or not is_instance_valid(player): return
 	
 	var _target_position: Vector2i = tilemap.local_to_map(player.global_position) + Vector2i.RIGHT
 	trap_selector.is_in_cooldown = true
@@ -79,7 +79,7 @@ func add_trap_ahead_player() -> void:
 	
 
 func add_trap_behind_player() -> void:
-	if trap_selector.is_in_cooldown: return
+	if trap_selector.is_in_cooldown or not is_instance_valid(player): return
 	
 	var _target_position: Vector2i = tilemap.local_to_map(player.global_position) + Vector2i.LEFT
 	trap_selector.is_in_cooldown = true
