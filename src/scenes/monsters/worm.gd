@@ -8,6 +8,7 @@ var direction := 1
 
 func _physics_process(delta):
 	sprite.play("run")
+	if direction > 0: sprite.flip_h = true
 	velocity.x = direction * SPEED
 	move_and_slide()
 

@@ -13,6 +13,7 @@ var hp := 3:
 		hp = _hp
 		if hp <= 0:
 			# TODO: derrota do player 1
+			OS.alert("Game Over", "King win :D")
 			queue_free()
 
 
