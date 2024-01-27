@@ -51,7 +51,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 	if trap_selector.current_trap.kind == Trap.Kind.HOLE:
 		# Qual tile "secundário" também será removido
 		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.RIGHT
-		_target_position = Vector2i(_pos.x, FLOOR_COORDINATE)
+		_target_position = Vector2i(round(_pos.x), FLOOR_COORDINATE)
 		tilemap.set_cell(0, _target_position, -1)
 		tilemap.set_cell(0, _target_position + _additional_offset, -1)
 		tilemap.set_cell(1, _target_position, -1)
