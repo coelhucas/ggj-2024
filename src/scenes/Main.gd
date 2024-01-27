@@ -7,6 +7,8 @@ extends Node2D
 
 const FLOOR_COORDINATE := 10
 
+var _removed_tiles: PackedVector2Array
+
 func _ready() -> void:
 	king.spawn_behind_player.connect(add_trap_behind_player)
 	king.spawn_ahead_player.connect(add_trap_ahead_player)
@@ -29,9 +31,27 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 				_ns.global_position.x = 0
 			elif _dir < 0:
 				_ns.global_position.x = get_viewport_rect().size.x
-			
+	
 		
 		add_child(_ns)
+
+	if trap_selector.current_trap.kind == Trap.Kind.HOLE:
+		# Qual tile "secundário" também será removido
+		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.RIGHT
+		_target_position = Vector2i(_pos.x, FLOOR_COORDINATE)
+		tilemap.set_cell(0, _target_position, -1)
+		tilemap.set_cell(0, _target_position + _additional_offset, -1)
+		
+		
+		_removed_tiles.append(_target_position)
+		_removed_tiles.append(_target_position + _additional_offset)
+		
+		await get_tree().create_timer(1.2).timeout
+		
+		for i in range(_removed_tiles.size()):
+			var _idx := wrapi(_removed_tiles.size() - 1 - i, 0, _removed_tiles.size())
+			tilemap.set_cell(0, _removed_tiles[_idx], 0, Vector2i.ZERO, 1)
+			_removed_tiles.remove_at(_idx)
 
 
 func add_trap_ahead_player() -> void:

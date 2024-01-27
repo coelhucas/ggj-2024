@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bc31ciimgvthe" path="res://data/traps/spike.tres" id="2_6peiw"]
 [ext_resource type="Resource" uid="uid://nhw3fi75wt0" path="res://data/traps/hole.tres" id="3_m1iq1"]
 [ext_resource type="Resource" uid="uid://cw2yrnhtoglbm" path="res://data/traps/spike-ball.tres" id="4_lq86t"]
-[ext_resource type="Resource" uid="uid://bwx82c7rw0oky" path="res://data/traps/slime.tres" id="5_pr5uh"]
+[ext_resource type="Resource" path="res://data/traps/slime.tres" id="5_pr5uh"]
 
 [node name="TrapSelector" type="Node2D"]
 script = ExtResource("1_ga46t")

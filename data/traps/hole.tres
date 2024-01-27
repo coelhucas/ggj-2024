@@ -6,3 +6,5 @@
 [resource]
 script = ExtResource("2_5m1cv")
 icon = ExtResource("1_moedp")
+floating = false
+kind = 2

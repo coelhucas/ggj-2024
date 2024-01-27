@@ -12,7 +12,7 @@ func _ready() -> void:
 	if vFrameIndex % 4 != 0:
 		vFrameIndex += 4 - (vFrameIndex % 4)
 	
-	skin.frame = vFrameIndex * skin.hframes + hFrameIndex
+	skin.frame = vFrameIndex * skin.hframes
 	Global.set_player.connect(func(_p):
 		player = _p
 	)

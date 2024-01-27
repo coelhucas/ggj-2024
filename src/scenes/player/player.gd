@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var sprite := $AnimatedSprite2D
+
 const GRAVITY := 50
 const SPEED := 200
 const JUMP_FORCE := -700
@@ -22,11 +24,13 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	var _input := Input.get_axis("p1_left", "p1_right")
-	#print(_input)
-	#if _input != 0 and scale.x != _input:
-		#scale.x = _input
+	
 	velocity.x = _input * SPEED
 	velocity.y += GRAVITY
+	
+	if _input != 0:
+		sprite.flip_h = _input < 0
+	
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D.play("walk")
