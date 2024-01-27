@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=11 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
 [ext_resource type="PackedScene" path="res://src/scenes/public/person2.tscn" id="6_2flqa"]
 [ext_resource type="PackedScene" uid="uid://bngctos3idixx" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
+[ext_resource type="PackedScene" uid="uid://e3uum565tdcm" path="res://src/scenes/traps/hole.tscn" id="7_22dcs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
 size = Vector2(20, 388)
@@ -97,5 +98,12 @@ tile_set = SubResource("TileSet_ofp0x")
 format = 2
 layer_0/name = "solid"
 layer_0/tile_data = PackedInt32Array(655360, 0, 65536, 655361, 0, 65536, 655362, 0, 65536, 655363, 0, 65536, 655364, 0, 65536, 655365, 0, 65536, 655366, 0, 65536, 655367, 0, 65536, 655368, 0, 65536, 655369, 0, 65536, 655370, 0, 65536, 655371, 0, 65536, 655372, 0, 65536, 655373, 0, 65536, 655374, 0, 65536, 655375, 0, 65536, 655376, 0, 65536, 655377, 0, 65536, 655378, 0, 65536, 655379, 0, 65536, 655380, 0, 65536)
+
+[node name="Hole" parent="Main" node_paths=PackedStringArray("respawn") instance=ExtResource("7_22dcs")]
+position = Vector2(320, 377)
+respawn = NodePath("../Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Main"]
+position = Vector2(36, 209)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://e3uum565tdcm"]
+
+[ext_resource type="Script" path="res://src/scenes/traps/hole.gd" id="1_hijal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chjes"]
+size = Vector2(640, 16)
+
+[node name="Hole" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hijal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_chjes")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
