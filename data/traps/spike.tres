@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Trap" load_steps=3 format=3 uid="uid://bc31ciimgvthe"]
+
+[ext_resource type="Script" path="res://src/resources/Trap.gd" id="1_l51j7"]
+[ext_resource type="Texture2D" uid="uid://d1cgu8tlcu6tf" path="res://assets/sprites/placeholder1.png" id="1_nwucj"]
+
+[resource]
+script = ExtResource("1_l51j7")
+icon = ExtResource("1_nwucj")
