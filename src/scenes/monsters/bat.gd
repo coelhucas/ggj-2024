@@ -23,7 +23,9 @@ func _physics_process(delta):
 
 
 func _on_hitbox_body_entered(body):
-	body.take_damage()
+	if body == self: return
+	if body.has_method("take_damage"):
+		body.take_damage()
 	queue_free()
 
 

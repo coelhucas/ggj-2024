@@ -33,6 +33,7 @@ size = Vector2(16, 30)
 
 [node name="Bat" type="CharacterBody2D"]
 collision_layer = 17
+collision_mask = 17
 script = ExtResource("1_vnie8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
