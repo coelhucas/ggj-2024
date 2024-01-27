@@ -1,26 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5erumf2osyiy"]
+[gd_scene load_steps=8 format=3 uid="uid://dnlse3f20wi1i"]
 
 [ext_resource type="Script" path="res://src/scenes/monsters/bat.gd" id="1_vnie8"]
+[ext_resource type="Texture2D" uid="uid://lmsxbc4sc00s" path="res://assets/sprites/monsters.png" id="2_5d41n"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hddwh"]
-load_path = "res://.godot/imported/monsters.png-b76a2307be6174f6c992095f9ad7b8a5.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4m60p"]
-atlas = SubResource("CompressedTexture2D_hddwh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy2ne"]
+atlas = ExtResource("2_5d41n")
 region = Rect2(264, 66, 66, 66)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cf72b"]
-atlas = SubResource("CompressedTexture2D_hddwh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_apwtv"]
+atlas = ExtResource("2_5d41n")
 region = Rect2(330, 66, 66, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_83lfv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4m60p")
+"texture": SubResource("AtlasTexture_cy2ne")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cf72b")
+"texture": SubResource("AtlasTexture_apwtv")
 }],
 "loop": true,
 "name": &"run",
@@ -34,6 +32,7 @@ size = Vector2(24, 28)
 size = Vector2(16, 16)
 
 [node name="Bat" type="CharacterBody2D"]
+collision_layer = 17
 script = ExtResource("1_vnie8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

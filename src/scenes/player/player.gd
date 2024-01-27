@@ -56,3 +56,9 @@ func flash(_times: int = 3) -> void:
 		show()
 		await get_tree().create_timer(0.12).timeout
 	invincibility_time = false
+
+
+func _on_feet_body_entered(body):
+	if velocity.y > 0:
+		velocity.y = JUMP_FORCE
+		body.queue_free()

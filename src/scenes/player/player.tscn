@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://jp7mgugpc8mu"]
+[gd_scene load_steps=23 format=3 uid="uid://jp7mgugpc8mu"]
 
 [ext_resource type="Script" path="res://src/scenes/player/player.gd" id="1_3s7oh"]
 [ext_resource type="Texture2D" uid="uid://ctueru5t57a5" path="res://assets/sprites/Jester_idle.png" id="2_xa26a"]
@@ -132,6 +132,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nrfi"]
 size = Vector2(33, 47)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvp5f"]
+size = Vector2(46, 8)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 9
@@ -152,6 +155,15 @@ animation = &"walk"
 frame_progress = 0.403682
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_0nrfi")
+
+[node name="Feet" type="Area2D" parent="."]
+position = Vector2(0, 31)
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Feet"]
+shape = SubResource("RectangleShape2D_cvp5f")
+
+[connection signal="body_entered" from="Feet" to="." method="_on_feet_body_entered"]

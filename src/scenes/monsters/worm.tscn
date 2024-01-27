@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dggdcoktrbsoc"]
+[gd_scene load_steps=8 format=3 uid="uid://bdxyi56fpkksp"]
 
 [ext_resource type="Script" path="res://src/scenes/monsters/worm.gd" id="1_uq0t4"]
 [ext_resource type="Texture2D" uid="uid://lmsxbc4sc00s" path="res://assets/sprites/monsters.png" id="2_lfmb7"]
@@ -32,6 +32,7 @@ size = Vector2(22, 26)
 size = Vector2(16, 15)
 
 [node name="Worm" type="CharacterBody2D"]
+collision_layer = 17
 script = ExtResource("1_uq0t4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
