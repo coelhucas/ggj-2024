@@ -10,7 +10,6 @@ var player: Node2D
 func _ready() -> void:
 	skin.frame = randi() % skin.hframes
 	Global.set_player.connect(func(_p):
-		print("wow")
 		player = _p
 	)
 
@@ -18,8 +17,6 @@ func _ready() -> void:
 func _process(delta):
 	if not is_instance_valid(player):
 		return
-	
-	print(abs(player.global_position.x - global_position.x))
 	
 	if player.global_position.x > global_position.x and abs(player.global_position.x - global_position.x) > offset:
 		sprite.frame = 3

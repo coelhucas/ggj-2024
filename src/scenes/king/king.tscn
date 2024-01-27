@@ -1,10 +1,230 @@
-[gd_scene load_steps=3 format=3 uid="uid://c42d2c58m34o6"]
+[gd_scene load_steps=10 format=3 uid="uid://c42d2c58m34o6"]
 
 [ext_resource type="Texture2D" uid="uid://bnuvwfom1smky" path="res://icon.svg" id="1_iv1oh"]
 [ext_resource type="Script" path="res://src/scenes/king/king.gd" id="1_vlvko"]
+[ext_resource type="Texture2D" uid="uid://bygicvpeeclqb" path="res://assets/sprites/hand.png" id="3_24660"]
+[ext_resource type="Texture2D" uid="uid://cnqkjfjpm3vwh" path="res://assets/sprites/crown.png" id="4_cpxtg"]
+[ext_resource type="Texture2D" uid="uid://cu7lpxqvbiqt4" path="res://assets/sprites/button.png" id="5_o4smg"]
+
+[sub_resource type="Animation" id="Animation_ps25x"]
+resource_name = "PressLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(67, 1), Vector2(71, -11), Vector2(71, 17), Vector2(67, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.381175, 0.202644, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_ahead"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_bipfc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(67, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RHand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-68, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RHand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2at3r"]
+resource_name = "PressRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-68, 1), Vector2(-70, -14), Vector2(-70, 15), Vector2(-68, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.267528, -0.130947, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_behind"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvesa"]
+_data = {
+"PressLeft": SubResource("Animation_ps25x"),
+"PressRight": SubResource("Animation_2at3r"),
+"RESET": SubResource("Animation_bipfc")
+}
 
 [node name="King" type="Node2D"]
 script = ExtResource("1_vlvko")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("1_iv1oh")
+
+[node name="Crown" type="Sprite2D" parent="."]
+position = Vector2(-2, -65)
+texture = ExtResource("4_cpxtg")
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(-72, 30)
+texture = ExtResource("5_o4smg")
+hframes = 2
+
+[node name="Button2" type="Sprite2D" parent="."]
+position = Vector2(71, 30)
+texture = ExtResource("5_o4smg")
+hframes = 2
+
+[node name="RHand" type="Sprite2D" parent="."]
+position = Vector2(-68, 1)
+texture = ExtResource("3_24660")
+
+[node name="LHand" type="Sprite2D" parent="."]
+position = Vector2(67, 1)
+texture = ExtResource("3_24660")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fvesa")
+}
+speed_scale = 2.0

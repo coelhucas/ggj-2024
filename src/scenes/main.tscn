@@ -20,6 +20,83 @@ tile_size = Vector2i(32, 32)
 [node name="Main" type="Node2D" parent="."]
 script = ExtResource("1_rbhpf")
 
+[node name="Audience" type="Node2D" parent="Main"]
+
+[node name="Person" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(45, 31)
+
+[node name="Person2" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(80, 34)
+
+[node name="Person3" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(110, 41)
+
+[node name="Person4" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(147, 42)
+
+[node name="Person5" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(213, 27)
+
+[node name="Person6" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(421, 44)
+
+[node name="Person7" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(510, 33)
+
+[node name="Person8" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(551, 44)
+
+[node name="Person9" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(614, 32)
+
+[node name="Person10" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(573, 158)
+
+[node name="Person11" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(459, 119)
+
+[node name="Person12" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(213, 98)
+
+[node name="Person13" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(131, 127)
+
+[node name="Person14" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(65, 123)
+
+[node name="Person15" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(22, 88)
+
+[node name="Person16" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(96, 88)
+
+[node name="Person17" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(58, 59)
+
+[node name="Person18" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(74, 69)
+
+[node name="Person19" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(132, 67)
+
+[node name="Person20" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(153, 84)
+
+[node name="Person21" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(416, 81)
+
+[node name="Person22" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(450, 58)
+
+[node name="Person23" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(479, 59)
+
+[node name="Person24" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(526, 70)
+
+[node name="Person25" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
+position = Vector2(587, 70)
+
 [node name="Player" parent="Main" instance=ExtResource("1_4s3sc")]
 position = Vector2(42, 324)
 
@@ -44,7 +121,7 @@ collision_layer = 8
 shape = SubResource("RectangleShape2D_1t7xc")
 
 [node name="King" parent="Main" instance=ExtResource("2_fadux")]
-position = Vector2(323, 70)
+position = Vector2(323, 92)
 
 [node name="TrapSelector" parent="Main" instance=ExtResource("3_lpelj")]
 position = Vector2(451, 65)
@@ -55,53 +132,5 @@ position = Vector2(184, 65)
 [node name="TileMap" type="TileMap" parent="Main"]
 tile_set = SubResource("TileSet_ofp0x")
 format = 2
-
-[node name="Person" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(45, 31)
-
-[node name="Person2" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(80, 34)
-
-[node name="Person3" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(110, 41)
-
-[node name="Person4" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(147, 42)
-
-[node name="Person5" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(213, 27)
-
-[node name="Person6" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(421, 44)
-
-[node name="Person7" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(510, 33)
-
-[node name="Person8" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(551, 44)
-
-[node name="Person9" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(614, 32)
-
-[node name="Person10" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(573, 158)
-
-[node name="Person11" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(459, 119)
-
-[node name="Person12" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(213, 98)
-
-[node name="Person13" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(131, 127)
-
-[node name="Person14" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(65, 123)
-
-[node name="Person15" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(22, 88)
-
-[node name="Person16" parent="Main" instance=ExtResource("5_4vk1h")]
-position = Vector2(96, 88)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
