@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=9 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
 [ext_resource type="PackedScene" uid="uid://c42d2c58m34o6" path="res://src/scenes/king/king.tscn" id="2_fadux"]
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
+[ext_resource type="PackedScene" uid="uid://dv5p5ifof14ek" path="res://src/scenes/public/person.tscn" id="5_4vk1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyoqy"]
 size = Vector2(774, 20)
@@ -54,5 +55,53 @@ position = Vector2(184, 65)
 [node name="TileMap" type="TileMap" parent="Main"]
 tile_set = SubResource("TileSet_ofp0x")
 format = 2
+
+[node name="Person" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(45, 31)
+
+[node name="Person2" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(80, 34)
+
+[node name="Person3" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(110, 41)
+
+[node name="Person4" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(147, 42)
+
+[node name="Person5" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(213, 27)
+
+[node name="Person6" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(421, 44)
+
+[node name="Person7" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(510, 33)
+
+[node name="Person8" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(551, 44)
+
+[node name="Person9" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(614, 32)
+
+[node name="Person10" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(573, 158)
+
+[node name="Person11" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(459, 119)
+
+[node name="Person12" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(213, 98)
+
+[node name="Person13" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(131, 127)
+
+[node name="Person14" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(65, 123)
+
+[node name="Person15" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(22, 88)
+
+[node name="Person16" parent="Main" instance=ExtResource("5_4vk1h")]
+position = Vector2(96, 88)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

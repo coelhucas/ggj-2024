@@ -18,3 +18,5 @@ offset_bottom = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0nrfi")
+
+[node name="Timer" type="Timer" parent="."]

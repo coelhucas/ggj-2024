@@ -1,15 +1,23 @@
 extends CharacterBody2D
 
 const GRAVITY := 50
-const SPEED := 400
-const JUMP_FORCE := -600
+const SPEED := 200
+const JUMP_FORCE := -700
+
+var invincibility_time := false
 
 var hp := 3:
 	set(_hp):
 		hp = _hp
 		if hp <= 0:
-			# TODO: condicao de derrota do player 1
+			# TODO: derrota do player 1
 			queue_free()
+
+
+func _ready() -> void:
+	await get_tree().create_timer(0.1).timeout
+	Global.set_player.emit(self)
+
 
 func _physics_process(delta):
 	var _input := Input.get_axis("p1_left", "p1_right")
@@ -22,5 +30,16 @@ func _physics_process(delta):
 	move_and_slide()
 
 func take_damage(_amount: int = 1) -> void:
-	print("uh")
+	if invincibility_time: return
 	hp -= _amount
+	flash()
+
+
+func flash(_times: int = 3) -> void:
+	invincibility_time = true
+	for i in range(_times):
+		hide()
+		await get_tree().create_timer(0.12).timeout
+		show()
+		await get_tree().create_timer(0.12).timeout
+	invincibility_time = false
