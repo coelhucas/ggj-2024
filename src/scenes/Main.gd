@@ -18,14 +18,18 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 	if not trap_selector.current_trap.floating:
 		_target_position.y = FLOOR_COORDINATE
 	
-		
-	
 	if trap_selector.current_trap.scene:
 		var _ns: Node2D = trap_selector.current_trap.scene.instantiate()
-		_ns.global_position = tilemap.map_to_local(_pos)
+		_ns.global_position = tilemap.map_to_local(_target_position)
 		
 		if trap_selector.current_trap.kind == Trap.Kind.MOVABLE:
 			_ns.direction = _dir
+			
+			if _dir > 0:
+				_ns.global_position.x = 0
+			elif _dir < 0:
+				_ns.global_position.x = get_viewport_rect().size.x
+			
 		
 		add_child(_ns)
 

@@ -69,6 +69,7 @@ p2_down={
 2d_physics/layer_1="Solid"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="TrapHitbox"
+2d_physics/layer_4="Wall"
 
 [rendering]
 
