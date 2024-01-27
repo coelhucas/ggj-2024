@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
 [ext_resource type="PackedScene" uid="uid://c42d2c58m34o6" path="res://src/scenes/king/king.tscn" id="2_fadux"]
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
-[ext_resource type="PackedScene" uid="uid://dv5p5ifof14ek" path="res://src/scenes/public/person.tscn" id="5_4vk1h"]
+[ext_resource type="PackedScene" uid="uid://cdb8lk655qyjf" path="res://src/scenes/public/person2.tscn" id="6_2flqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyoqy"]
 size = Vector2(774, 20)
@@ -22,80 +22,44 @@ script = ExtResource("1_rbhpf")
 
 [node name="Audience" type="Node2D" parent="Main"]
 
-[node name="Person" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(45, 31)
+[node name="Person" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(545, 58)
 
-[node name="Person2" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(80, 34)
+[node name="Person2" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(66, 63)
 
-[node name="Person3" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(110, 41)
+[node name="Person3" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(594, 112)
 
-[node name="Person4" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(147, 42)
+[node name="Person4" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(140, 95)
 
-[node name="Person5" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(213, 27)
+[node name="Person5" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(494, 102)
 
-[node name="Person6" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(421, 44)
+[node name="Person6" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(120, 31)
 
-[node name="Person7" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(510, 33)
+[node name="Person7" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(39, 98)
 
-[node name="Person8" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(551, 44)
+[node name="Person8" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(482, 40)
 
-[node name="Person9" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(614, 32)
+[node name="Person9" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(595, 31)
 
-[node name="Person10" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(573, 158)
+[node name="Person10" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(533, 135)
 
-[node name="Person11" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(459, 119)
+[node name="Person11" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(611, 70)
 
-[node name="Person12" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(213, 98)
+[node name="Person12" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(92, 124)
 
-[node name="Person13" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(131, 127)
-
-[node name="Person14" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(65, 123)
-
-[node name="Person15" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(22, 88)
-
-[node name="Person16" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(96, 88)
-
-[node name="Person17" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(58, 59)
-
-[node name="Person18" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(74, 69)
-
-[node name="Person19" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(132, 67)
-
-[node name="Person20" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(153, 84)
-
-[node name="Person21" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(416, 81)
-
-[node name="Person22" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(450, 58)
-
-[node name="Person23" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(479, 59)
-
-[node name="Person24" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(526, 70)
-
-[node name="Person25" parent="Main/Audience" instance=ExtResource("5_4vk1h")]
-position = Vector2(587, 70)
+[node name="Person13" parent="Main/Audience" instance=ExtResource("6_2flqa")]
+position = Vector2(35, 20)
 
 [node name="Player" parent="Main" instance=ExtResource("1_4s3sc")]
 position = Vector2(42, 324)

@@ -17,12 +17,21 @@ var hp := 3:
 func _ready() -> void:
 	await get_tree().create_timer(0.1).timeout
 	Global.set_player.emit(self)
+	$AnimatedSprite2D.play("idle")
 
 
 func _physics_process(delta):
 	var _input := Input.get_axis("p1_left", "p1_right")
+	#print(_input)
+	#if _input != 0 and scale.x != _input:
+		#scale.x = _input
 	velocity.x = _input * SPEED
 	velocity.y += GRAVITY
+	
+	if velocity.x != 0:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("idle")
 	
 	if Input.is_action_just_pressed("p1_up") and is_on_floor():
 		velocity.y = JUMP_FORCE
