@@ -11,6 +11,12 @@ var invincibility_time := false
 var hp := 3:
 	set(_hp):
 		hp = _hp
+		
+		if hp == 2:
+			Global.health_update.emit(2)
+		elif hp == 1:
+			Global.health_update.emit(3)
+		
 		if hp <= 0:
 			# TODO: derrota do player 1
 			Global.game_over.emit(true)

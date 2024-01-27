@@ -40,7 +40,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 		add_child(_ns)
 	
 	if trap_selector.current_trap.kind == Trap.Kind.SPIKE:
-		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.RIGHT
+		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.ZERO
 		_target_position = Vector2i(_pos.x + _additional_offset.x, SPIKE_COORDINATE)
 		
 		for spike in get_tree().get_nodes_in_group("spike"):
@@ -50,7 +50,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1) -> void:
 
 	if trap_selector.current_trap.kind == Trap.Kind.HOLE:
 		# Qual tile "secundário" também será removido
-		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.RIGHT
+		var _additional_offset := Vector2.RIGHT if _pos.x > tilemap.local_to_map(player.global_position).x else Vector2.LEFT
 		_target_position = Vector2i(round(_pos.x), FLOOR_COORDINATE)
 		tilemap.set_cell(0, _target_position, -1)
 		tilemap.set_cell(0, _target_position + _additional_offset, -1)

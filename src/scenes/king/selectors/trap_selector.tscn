@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://k7hsdvivpmgm"]
+[gd_scene load_steps=8 format=3 uid="uid://k7hsdvivpmgm"]
 
 [ext_resource type="Script" path="res://src/scenes/king/selectors/TrapSelector.gd" id="1_ga46t"]
 [ext_resource type="Resource" uid="uid://bc31ciimgvthe" path="res://data/traps/spike.tres" id="2_6peiw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cw2yrnhtoglbm" path="res://data/traps/spike-ball.tres" id="4_lq86t"]
 [ext_resource type="Resource" path="res://data/traps/worm.tres" id="5_pr5uh"]
 [ext_resource type="Resource" path="res://data/traps/bat.tres" id="6_4jtok"]
+[ext_resource type="Texture2D" uid="uid://co2x7bsdwaf0m" path="res://assets/sprites/trap-light.png" id="7_3jkdy"]
 
 [node name="TrapSelector" type="Node2D"]
 script = ExtResource("1_ga46t")
@@ -15,3 +16,6 @@ traps = Array[Resource("res://src/resources/Trap.gd")]([ExtResource("2_6peiw"), 
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("7_3jkdy")

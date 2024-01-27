@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmmojfh1j80hu"]
+
+[ext_resource type="AudioStream" uid="uid://na7vi8gserqw" path="res://assets/sounds/music/jam-001.ogg" id="1_ily7f"]
+[ext_resource type="Script" path="res://src/scenes/music_manager/music_manager.gd" id="1_ouhhx"]
+[ext_resource type="AudioStream" uid="uid://dpxtgdj0ttg18" path="res://assets/sounds/music/jam-002.ogg" id="2_fcge6"]
+[ext_resource type="AudioStream" uid="uid://cxfsnybc3uj4j" path="res://assets/sounds/music/jam-003.ogg" id="3_y3acb"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_ouhhx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ily7f")
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fcge6")
+bus = &"Music"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y3acb")
+bus = &"Music"
