@@ -26,19 +26,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
-size = Vector2(24, 28)
+size = Vector2(92, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
-size = Vector2(16, 35)
+size = Vector2(58, 135)
 
 [node name="Bat" type="CharacterBody2D"]
-collision_layer = 17
-collision_mask = 17
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_vnie8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
-scale = Vector2(0.454545, 0.454545)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_83lfv")
 animation = &"run"
 

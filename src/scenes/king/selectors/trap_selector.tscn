@@ -9,6 +9,7 @@
 [node name="TrapSelector" type="Node2D"]
 script = ExtResource("1_ga46t")
 traps = Array[Resource("res://src/resources/Trap.gd")]([ExtResource("2_6peiw"), ExtResource("4_lq86t"), ExtResource("7_3r8v2")])
+cooldown_time = 0.4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

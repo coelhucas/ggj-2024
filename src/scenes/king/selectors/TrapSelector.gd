@@ -5,6 +5,7 @@ extends Node2D
 
 @export_category("Config")
 @export var traps: Array[Trap]
+@export var cooldown_time := 0.8
 
 var is_in_cooldown := false:
 	set(_iic):
@@ -14,7 +15,7 @@ var is_in_cooldown := false:
 		if is_in_cooldown:
 			modulate.a = 0.6
 			# TODO: definir cooldown dinâmico invés de fixo hardcoded
-			await get_tree().create_timer(0.8).timeout
+			await get_tree().create_timer(cooldown_time).timeout
 			is_in_cooldown = false
 			Global.is_in_cooldown = is_in_cooldown
 			modulate.a = 1.0

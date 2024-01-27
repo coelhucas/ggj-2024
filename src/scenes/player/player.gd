@@ -74,5 +74,5 @@ func flash(_times: int = 3) -> void:
 
 func _on_feet_body_entered(body):
 	if velocity.y > 0:
-		velocity.y = JUMP_FORCE
+		velocity.y = JUMP_FORCE * 0.8
 		body.queue_free()
