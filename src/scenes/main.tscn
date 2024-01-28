@@ -6,15 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://bxc84yynwj5k2" path="res://assets/sprites/base_art.png" id="2_i0h6s"]
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
 [ext_resource type="PackedScene" uid="uid://by8swj5cc33u6" path="res://src/scenes/boxes/box_stairs.tscn" id="4_05y1f"]
-[ext_resource type="PackedScene" path="res://src/scenes/public/person2.tscn" id="6_2flqa"]
-[ext_resource type="PackedScene" uid="uid://bngctos3idixx" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
+[ext_resource type="PackedScene" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
 [ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
 [ext_resource type="PackedScene" uid="uid://bqniljg3f6uu0" path="res://src/scenes/boxes/box_pile.tscn" id="9_1oalj"]
 [ext_resource type="Script" path="res://src/scenes/ui/ui.gd" id="9_m7muy"]
 [ext_resource type="Script" path="res://src/scenes/traps/lights.gd" id="10_q12el"]
-[ext_resource type="PackedScene" uid="uid://irmwr4ojn30u" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
+[ext_resource type="PackedScene" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
 [ext_resource type="PackedScene" uid="uid://cmmojfh1j80hu" path="res://src/scenes/music_manager/music_manager.tscn" id="11_2bi5m"]
 [ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="12_px06a"]
+[ext_resource type="PackedScene" uid="uid://dxiiriwd148q1" path="res://src/scenes/public/normalEgg.tscn" id="16_welqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
 size = Vector2(20, 1079)
@@ -29,6 +29,21 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetScenesCollectionSource_6dd4i")
+
+[sub_resource type="Animation" id="Animation_fi65o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_i4c2p"]
 resource_name = "default"
@@ -45,21 +60,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.258824, 0.258824, 0.258824, 1), Color(1, 1, 1, 1), Color(0.258824, 0.258824, 0.258824, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_fi65o"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mp870"]
@@ -80,44 +80,8 @@ texture = ExtResource("2_i0h6s")
 
 [node name="Audience" type="Node2D" parent="Main"]
 
-[node name="Person" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(545, 58)
-
-[node name="Person2" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(66, 63)
-
-[node name="Person3" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(594, 112)
-
-[node name="Person4" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(140, 95)
-
-[node name="Person5" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(494, 102)
-
-[node name="Person6" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(120, 31)
-
-[node name="Person7" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(39, 98)
-
-[node name="Person8" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(482, 40)
-
-[node name="Person9" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(595, 31)
-
-[node name="Person10" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(533, 135)
-
-[node name="Person11" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(611, 70)
-
-[node name="Person12" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(92, 124)
-
-[node name="Person13" parent="Main/Audience" instance=ExtResource("6_2flqa")]
-position = Vector2(35, 20)
+[node name="NormalEgg" parent="Main/Audience" instance=ExtResource("16_welqy")]
+position = Vector2(1277, 176)
 
 [node name="BoxPile" parent="Main" instance=ExtResource("9_1oalj")]
 unique_name_in_owner = true
