@@ -38,7 +38,6 @@ func player_damaged() -> void:
 	_sound.autoplay = true
 	_sound.finished.connect(func(): _sound.queue_free())
 	_sound.bus = "Sfx"
-	AudioServer.set_bus_effect_enabled(0, 0, true)
 	add_child(_sound)
 
 
@@ -48,7 +47,6 @@ func play_miss_sfx() -> void:
 	_sound.autoplay = true
 	_sound.finished.connect(func(): _sound.queue_free())
 	_sound.bus = "Sfx"
-	AudioServer.set_bus_effect_enabled(0, 0, true)
 	add_child(_sound)
 
 func play_win_sfx() -> void:
@@ -57,5 +55,4 @@ func play_win_sfx() -> void:
 	_sound.autoplay = true
 	_sound.finished.connect(func(): _sound.queue_free())
 	_sound.bus = "Sfx"
-	AudioServer.set_bus_effect_enabled(0, 0, true)
 	add_child(_sound)

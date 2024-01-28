@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=22 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://src/scenes/traps/lights.gd" id="10_q12el"]
 [ext_resource type="PackedScene" uid="uid://irmwr4ojn30u" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
 [ext_resource type="PackedScene" uid="uid://cmmojfh1j80hu" path="res://src/scenes/music_manager/music_manager.tscn" id="11_2bi5m"]
+[ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="12_px06a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
 size = Vector2(20, 1079)
@@ -28,6 +29,44 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetScenesCollectionSource_6dd4i")
+
+[sub_resource type="Animation" id="Animation_i4c2p"]
+resource_name = "default"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.258824, 0.258824, 0.258824, 1), Color(1, 1, 1, 1), Color(0.258824, 0.258824, 0.258824, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fi65o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mp870"]
+_data = {
+"RESET": SubResource("Animation_fi65o"),
+"default": SubResource("Animation_i4c2p")
+}
 
 [node name="Node" type="Node"]
 
@@ -82,11 +121,11 @@ position = Vector2(35, 20)
 
 [node name="BoxPile" parent="Main" instance=ExtResource("9_1oalj")]
 unique_name_in_owner = true
-position = Vector2(1897, 627)
+position = Vector2(1897, 851)
 
 [node name="BoxStairs" parent="Main" instance=ExtResource("4_05y1f")]
 unique_name_in_owner = true
-position = Vector2(22, 638)
+position = Vector2(22, 862)
 
 [node name="Player" parent="Main" instance=ExtResource("1_4s3sc")]
 unique_name_in_owner = true
@@ -127,6 +166,28 @@ position = Vector2(36, 209)
 
 [node name="EnemySelector" parent="Main" instance=ExtResource("10_ub53v")]
 position = Vector2(218, 60)
+
+[node name="Illumination" type="PointLight2D" parent="Main"]
+position = Vector2(479, 111)
+texture = ExtResource("12_px06a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Illumination"]
+libraries = {
+"": SubResource("AnimationLibrary_mp870")
+}
+autoplay = "default"
+speed_scale = 1.8
+
+[node name="Illumination2" type="PointLight2D" parent="Main"]
+position = Vector2(1451, 147)
+texture = ExtResource("12_px06a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Illumination2"]
+libraries = {
+"": SubResource("AnimationLibrary_mp870")
+}
+autoplay = "default"
+speed_scale = 1.6
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
