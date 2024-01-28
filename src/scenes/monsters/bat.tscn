@@ -1,25 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnlse3f20wi1i"]
+[gd_scene load_steps=8 format=3 uid="uid://dnlse3f20wi1i"]
 
 [ext_resource type="Script" path="res://src/scenes/monsters/bat.gd" id="1_vnie8"]
-[ext_resource type="Texture2D" uid="uid://lmsxbc4sc00s" path="res://assets/sprites/monsters.png" id="2_5d41n"]
+[ext_resource type="Texture2D" uid="uid://m6tdtrbhs8er" path="res://assets/sprites/bat-1.png" id="2_xgx45"]
+[ext_resource type="Texture2D" uid="uid://cimviyyslvqam" path="res://assets/sprites/bat-2.png" id="3_46m21"]
 [ext_resource type="AudioStream" uid="uid://b1re37nttxs8k" path="res://assets/sounds/sfx/bat.ogg" id="3_gjcsl"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cy2ne"]
-atlas = ExtResource("2_5d41n")
-region = Rect2(264, 66, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_apwtv"]
-atlas = ExtResource("2_5d41n")
-region = Rect2(330, 66, 66, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_83lfv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cy2ne")
+"texture": ExtResource("2_xgx45")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_apwtv")
+"texture": ExtResource("3_46m21")
 }],
 "loop": true,
 "name": &"run",
@@ -27,10 +20,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
-size = Vector2(92, 128)
+size = Vector2(156, 196)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
-size = Vector2(58, 135)
+size = Vector2(122, 237)
 
 [node name="Bat" type="CharacterBody2D"]
 collision_layer = 16
@@ -38,8 +31,8 @@ collision_mask = 0
 script = ExtResource("1_vnie8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(2, 2)
+position = Vector2(37, -39)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_83lfv")
 animation = &"run"
 
@@ -56,6 +49,7 @@ position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_1sv12")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(10.1, 9.1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gjcsl")

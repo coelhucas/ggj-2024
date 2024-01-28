@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D
 
-const SPEED := 150
+const SPEED := 400
 
 var direction := 1
 
