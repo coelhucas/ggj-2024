@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://teflutbqmr75"]
 
 [ext_resource type="Script" path="res://src/scenes/traps/spike_ball.gd" id="1_03u12"]
-[ext_resource type="Texture2D" uid="uid://2sy0f7mvwhhg" path="res://assets/sprites/BolaDeEspinhos.webp" id="2_at750"]
+[ext_resource type="Texture2D" uid="uid://8il7uykn1rjm" path="res://assets/sprites/spike-ball.png" id="2_mqrcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
 size = Vector2(60, 62)
@@ -14,7 +14,7 @@ script = ExtResource("1_03u12")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.168519, 0.168519)
-texture = ExtResource("2_at750")
+texture = ExtResource("2_mqrcm")
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(-1, 0)

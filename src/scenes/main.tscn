@@ -312,9 +312,3 @@ texture_pressed = ExtResource("19_ipvdb")
 texture_hover = ExtResource("20_xopmv")
 
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
-
-[connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@56533" to="Main/TileMap/@Area2D@56533" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@56534" to="Main/TileMap/@Area2D@56534" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@56535" to="Main/TileMap/@Area2D@56535" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@56536" to="Main/TileMap/@Area2D@56536" method="_on_body_entered"]
