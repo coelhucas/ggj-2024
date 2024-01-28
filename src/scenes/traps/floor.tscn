@@ -8,6 +8,7 @@ size = Vector2(128, 128)
 [node name="Floor" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_r2xlq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

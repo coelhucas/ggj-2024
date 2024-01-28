@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
-[ext_resource type="Texture2D" uid="uid://bnuvwfom1smky" path="res://icon.svg" id="2_0y16v"]
 [ext_resource type="PackedScene" uid="uid://c42d2c58m34o6" path="res://src/scenes/king/king.tscn" id="2_fadux"]
+[ext_resource type="Texture2D" uid="uid://bxc84yynwj5k2" path="res://assets/sprites/base_art.png" id="2_i0h6s"]
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
 [ext_resource type="PackedScene" uid="uid://by8swj5cc33u6" path="res://src/scenes/boxes/box_stairs.tscn" id="4_05y1f"]
 [ext_resource type="PackedScene" path="res://src/scenes/public/person2.tscn" id="6_2flqa"]
@@ -35,9 +35,9 @@ sources/0 = SubResource("TileSetScenesCollectionSource_6dd4i")
 script = ExtResource("1_rbhpf")
 
 [node name="Background" type="Sprite2D" parent="Main"]
-position = Vector2(965, 540)
-scale = Vector2(15.1406, 8.53125)
-texture = ExtResource("2_0y16v")
+position = Vector2(960.75, 540.75)
+scale = Vector2(3.00078, 2.93614)
+texture = ExtResource("2_i0h6s")
 
 [node name="Audience" type="Node2D" parent="Main"]
 
@@ -109,7 +109,7 @@ position = Vector2(-5, 396.5)
 shape = SubResource("RectangleShape2D_1t7xc")
 
 [node name="King" parent="Main" instance=ExtResource("2_fadux")]
-position = Vector2(964, 92)
+position = Vector2(1014, 281)
 
 [node name="TrapSelector" parent="Main" instance=ExtResource("3_lpelj")]
 position = Vector2(451, 65)
@@ -118,9 +118,9 @@ position = Vector2(451, 65)
 tile_set = SubResource("TileSet_ofp0x")
 format = 2
 layer_0/name = "solid"
-layer_0/tile_data = PackedInt32Array(327680, 0, 65536, 327681, 0, 65536, 327682, 0, 65536, 327683, 0, 65536, 327684, 0, 65536, 327685, 0, 65536, 327686, 0, 65536, 327687, 0, 65536, 327688, 0, 65536, 327689, 0, 65536, 327690, 0, 65536, 327691, 0, 65536, 327692, 0, 65536, 327693, 0, 65536, 327694, 0, 65536)
+layer_0/tile_data = PackedInt32Array(458752, 0, 65536, 458753, 0, 65536, 458754, 0, 65536, 458755, 0, 65536, 458756, 0, 65536, 458757, 0, 65536, 458758, 0, 65536, 458759, 0, 65536, 458760, 0, 65536, 458761, 0, 65536, 458762, 0, 65536, 458763, 0, 65536, 458764, 0, 65536, 458765, 0, 65536, 458766, 0, 65536)
 layer_1/name = "spikes"
-layer_1/tile_data = PackedInt32Array(327680, 0, 131072, 327681, 0, 131072, 327682, 0, 131072, 327683, 0, 131072, 327684, 0, 131072, 327685, 0, 131072, 327686, 0, 131072, 327687, 0, 131072, 327688, 0, 131072, 327689, 0, 131072, 327690, 0, 131072, 327691, 0, 131072, 327692, 0, 131072, 327693, 0, 131072, 327694, 0, 131072)
+layer_1/tile_data = PackedInt32Array(458752, 0, 131072, 458753, 0, 131072, 458754, 0, 131072, 458755, 0, 131072, 458756, 0, 131072, 458757, 0, 131072, 458758, 0, 131072, 458759, 0, 131072, 458760, 0, 131072, 458761, 0, 131072, 458762, 0, 131072, 458763, 0, 131072, 458764, 0, 131072, 458765, 0, 131072, 458766, 0, 131072)
 
 [node name="Marker2D" type="Marker2D" parent="Main"]
 position = Vector2(36, 209)
@@ -169,17 +169,17 @@ text = "Play Again"
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
 
 [connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148503" to="Main/TileMap/@Area2D@148503" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148504" to="Main/TileMap/@Area2D@148504" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148505" to="Main/TileMap/@Area2D@148505" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148506" to="Main/TileMap/@Area2D@148506" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148507" to="Main/TileMap/@Area2D@148507" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148508" to="Main/TileMap/@Area2D@148508" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148509" to="Main/TileMap/@Area2D@148509" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148510" to="Main/TileMap/@Area2D@148510" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148511" to="Main/TileMap/@Area2D@148511" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148512" to="Main/TileMap/@Area2D@148512" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148513" to="Main/TileMap/@Area2D@148513" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148514" to="Main/TileMap/@Area2D@148514" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148515" to="Main/TileMap/@Area2D@148515" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@148516" to="Main/TileMap/@Area2D@148516" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160906" to="Main/TileMap/@Area2D@160906" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160907" to="Main/TileMap/@Area2D@160907" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160908" to="Main/TileMap/@Area2D@160908" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160909" to="Main/TileMap/@Area2D@160909" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160910" to="Main/TileMap/@Area2D@160910" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160911" to="Main/TileMap/@Area2D@160911" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160912" to="Main/TileMap/@Area2D@160912" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160913" to="Main/TileMap/@Area2D@160913" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160914" to="Main/TileMap/@Area2D@160914" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160915" to="Main/TileMap/@Area2D@160915" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160916" to="Main/TileMap/@Area2D@160916" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160917" to="Main/TileMap/@Area2D@160917" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160918" to="Main/TileMap/@Area2D@160918" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@160919" to="Main/TileMap/@Area2D@160919" method="_on_body_entered"]

@@ -10,4 +10,4 @@ icon = ExtResource("1_eykkg")
 scene = ExtResource("2_ctjj7")
 floating = false
 kind = 1
-custom_y = 4
+custom_y = 6

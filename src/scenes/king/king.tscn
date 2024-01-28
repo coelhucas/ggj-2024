@@ -173,6 +173,7 @@ _data = {
 script = ExtResource("1_vlvko")
 
 [node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_i8yiy")
 
 [node name="Button" type="Sprite2D" parent="."]
@@ -187,11 +188,13 @@ hframes = 2
 
 [node name="LHand" type="Sprite2D" parent="."]
 position = Vector2(67, 1)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_xon8c")
 hframes = 2
 
 [node name="RHand" type="Sprite2D" parent="."]
-position = Vector2(-306, 13)
+position = Vector2(-230.9, 20.1)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_xon8c")
 flip_h = true
 hframes = 2

@@ -84,3 +84,7 @@ p2_down={
 2d_physics/layer_4="Wall"
 2d_physics/layer_5="Enemy"
 2d_physics/layer_6="PlayerHitbox"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

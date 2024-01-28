@@ -10,4 +10,4 @@ icon = ExtResource("1_gfimm")
 scene = ExtResource("2_asfrb")
 floating = false
 kind = 1
-custom_y = 4
+custom_y = 6
