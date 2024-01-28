@@ -15,6 +15,7 @@ var invincibility_time := false
 var hp := 3:
 	set(_hp):
 		hp = _hp
+		Global.player_damaged()
 		
 		if hp == 2:
 			Global.health_update.emit(2)
@@ -81,6 +82,7 @@ func flash(_times: int = 3) -> void:
 
 func _on_feet_body_entered(body):
 	if velocity.y > 0:
+		Global.play_miss_sfx()
 		velocity.y = JUMP_FORCE * 0.8
 		body.queue_free()
 

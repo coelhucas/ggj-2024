@@ -11,6 +11,8 @@ func _ready() -> void:
 
 
 func display(_king_win: bool) -> void:
-	print("display game over")
+	if not _king_win:
+		Global.play_win_sfx()
+
 	end_game_label.text = "King wins!" if _king_win else "Jester wins!"
 	end_game_panel.show()

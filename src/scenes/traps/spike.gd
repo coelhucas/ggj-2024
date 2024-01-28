@@ -4,6 +4,7 @@ extends Area2D
 @onready var sfx := $AudioStreamPlayer
 
 var _init_y := 0
+var damaged_player := false
 
 func _ready() -> void:
 	_init_y = position.y
@@ -23,8 +24,14 @@ func attack() -> void:
 	_t.tween_property(self, "position:y", _init_y, 0.2).set_delay(0.5)
 	_t.tween_callback(func():
 		collision_shape.disabled = true
+		
+		if not damaged_player:
+			Global.play_miss_sfx()
+		
+		damaged_player = false
 	)
 
 
 func _on_body_entered(body):
 	body.take_damage()
+	damaged_player = true
