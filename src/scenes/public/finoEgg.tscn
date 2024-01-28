@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ct1arixwi88s4" path="res://assets/sprites/audience/fino/OvoFinoSurpreso.webp" id="6_kj1rl"]
 [ext_resource type="Texture2D" uid="uid://83xo000wga4y" path="res://assets/sprites/audience/fino/OvoFinoOlhandoPraBaixoBigas.webp" id="7_ov4ii"]
 
-[node name="NormalEgg" type="Node2D"]
+[node name="FinoEgg" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_xxhvq")
 
