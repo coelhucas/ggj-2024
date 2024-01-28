@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b23ydus8h4a55"]
+
+[ext_resource type="Script" path="res://src/scenes/barraVida/barra_de_vida.gd" id="1_7ubsm"]
+[ext_resource type="Texture2D" uid="uid://c6iyjmlq1xtu3" path="res://assets/sprites/scenary/BarraDeVida.webp" id="1_bufm1"]
+[ext_resource type="Texture2D" uid="uid://6e4prmc7ktxa" path="res://assets/sprites/scenary/CoracaoDeVida.webp" id="2_w2mm6"]
+
+[node name="BarraDeVida" type="Node2D"]
+script = ExtResource("1_7ubsm")
+
+[node name="BarraDeVida" type="Sprite2D" parent="."]
+position = Vector2(216, 88)
+texture = ExtResource("1_bufm1")
+
+[node name="CoracaoDeVida" type="Sprite2D" parent="."]
+position = Vector2(112, 88)
+texture = ExtResource("2_w2mm6")
+
+[node name="CoracaoDeVida2" type="Sprite2D" parent="."]
+position = Vector2(216, 88)
+texture = ExtResource("2_w2mm6")
+
+[node name="CoracaoDeVida3" type="Sprite2D" parent="."]
+position = Vector2(312, 88)
+texture = ExtResource("2_w2mm6")
