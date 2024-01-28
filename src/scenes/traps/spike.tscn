@@ -9,6 +9,7 @@
 size = Vector2(327, 221)
 
 [node name="Spike" type="Area2D" groups=["spike"]]
+scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_toxgk")
