@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://degy8yroeirvo"]
+
+[ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="1_6hekg"]
+
+[sub_resource type="Animation" id="Animation_fi65o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i4c2p"]
+resource_name = "default"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.258824, 0.258824, 0.258824, 1), Color(1, 1, 1, 1), Color(0.258824, 0.258824, 0.258824, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mp870"]
+_data = {
+"RESET": SubResource("Animation_fi65o"),
+"default": SubResource("Animation_i4c2p")
+}
+
+[node name="Illumination" type="PointLight2D"]
+position = Vector2(479, 111)
+texture = ExtResource("1_6hekg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mp870")
+}
+autoplay = "default"
+speed_scale = 1.8
