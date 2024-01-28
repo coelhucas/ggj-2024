@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdxyi56fpkksp"]
+[gd_scene load_steps=9 format=3 uid="uid://bdxyi56fpkksp"]
 
 [ext_resource type="Script" path="res://src/scenes/monsters/worm.gd" id="1_uq0t4"]
 [ext_resource type="Texture2D" uid="uid://lmsxbc4sc00s" path="res://assets/sprites/monsters.png" id="2_lfmb7"]
+[ext_resource type="AudioStream" uid="uid://cng4o74haxi07" path="res://assets/sounds/sfx/snake.ogg" id="3_3hpjp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g5qwg"]
 atlas = ExtResource("2_lfmb7")
@@ -54,6 +55,11 @@ position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_1sv12")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3hpjp")
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
