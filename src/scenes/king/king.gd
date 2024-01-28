@@ -9,10 +9,10 @@ signal spawn_trap
 signal make_surprise
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("p2_left") and not Global.is_in_cooldown:
+	if Input.is_action_just_pressed("p2_left") and not Global.is_in_cooldown and not animation_player.is_playing():
 		animation_player.play("PressRight")
 	
-	if Input.is_action_just_pressed("p2_right") and not Global.is_in_cooldown:
+	if Input.is_action_just_pressed("p2_right") and not Global.is_in_cooldown and not animation_player.is_playing():
 		animation_player.play("PressLeft")
 
 

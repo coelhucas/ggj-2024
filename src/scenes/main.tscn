@@ -283,12 +283,12 @@ color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 script = ExtResource("10_q12el")
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("9_m7muy")
 texture_king_win = ExtResource("19_txoo8")
 texture_jester_win = ExtResource("21_a1h2c")
 
 [node name="EndGame" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
