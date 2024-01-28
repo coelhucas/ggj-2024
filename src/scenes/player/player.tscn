@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://jp7mgugpc8mu"]
+[gd_scene load_steps=25 format=3 uid="uid://jp7mgugpc8mu"]
 
 [ext_resource type="Script" path="res://src/scenes/player/player.gd" id="1_3s7oh"]
 [ext_resource type="Texture2D" uid="uid://ctueru5t57a5" path="res://assets/sprites/Jester_idle.png" id="2_xa26a"]
+[ext_resource type="PackedScene" uid="uid://b8jg4032rcb3e" path="res://src/scenes/boxes/box_icon.tscn" id="2_y4mql"]
 [ext_resource type="Texture2D" uid="uid://dvfyd0i7jbn2n" path="res://assets/sprites/Jester_walk.png" id="3_mhw6e"]
 [ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="4_y8vmn"]
 
@@ -140,15 +141,20 @@ size = Vector2(114, 20)
 collision_layer = 3
 collision_mask = 9
 script = ExtResource("1_3s7oh")
+metadata/_edit_vertical_guides_ = [95.0]
+metadata/_edit_horizontal_guides_ = [-160.0]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="BoxIcon" parent="." instance=ExtResource("2_y4mql")]
+position = Vector2(71, -172)
+scale = Vector2(4, 4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -66)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_nt05j")
 animation = &"walk"
-frame_progress = 0.403682
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -49)

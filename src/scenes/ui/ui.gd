@@ -11,5 +11,6 @@ func _ready() -> void:
 
 
 func display(_king_win: bool) -> void:
+	print("display game over")
 	end_game_label.text = "King wins!" if _king_win else "Jester wins!"
 	end_game_panel.show()

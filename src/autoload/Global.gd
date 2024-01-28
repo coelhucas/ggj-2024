@@ -25,3 +25,4 @@ func turn_lights_off() -> void:
 	await get_tree().create_timer(10).timeout
 	AudioServer.set_bus_effect_enabled(0, 0, false)
 	lights_on.emit()
+const MAX_BOXES = 6

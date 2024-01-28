@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://by8swj5cc33u6"]
+
+[ext_resource type="PackedScene" uid="uid://b0gdf0kwatlx1" path="res://src/scenes/boxes/box.tscn" id="1_lvnym"]
+[ext_resource type="Script" path="res://src/scenes/boxes/box_stairs.gd" id="1_xyowe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pbkj"]
+size = Vector2(45, 109)
+
+[node name="BoxStairs" type="Area2D"]
+position = Vector2(-12, 1)
+script = ExtResource("1_xyowe")
+
+[node name="Box" parent="." instance=ExtResource("1_lvnym")]
+position = Vector2(8, -9)
+
+[node name="Box2" parent="." instance=ExtResource("1_lvnym")]
+position = Vector2(16, -27)
+
+[node name="Box3" parent="." instance=ExtResource("1_lvnym")]
+position = Vector2(8, -45)
+
+[node name="Box4" parent="." instance=ExtResource("1_lvnym")]
+position = Vector2(16, -63)
+
+[node name="Box5" parent="." instance=ExtResource("1_lvnym")]
+position = Vector2(8, -81)
+
+[node name="Box6" parent="." instance=ExtResource("1_lvnym")]
+position = Vector2(16, -99)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -55.5)
+shape = SubResource("RectangleShape2D_3pbkj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

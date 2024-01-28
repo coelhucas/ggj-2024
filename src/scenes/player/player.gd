@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D
 @onready var light := $Light2D
+@onready var box_pile := %BoxPile
+@onready var box_stairs := %BoxStairs
+@onready var box_icon := $BoxIcon
 
 const GRAVITY := 50
 const SPEED := 200
@@ -25,6 +28,10 @@ var hp := 3:
 
 
 func _ready() -> void:
+	box_stairs.placed_box.connect(_on_placed_box)
+	box_pile.took_box.connect(_on_took_box)
+	box_icon.visible = false
+	
 	await get_tree().create_timer(0.1).timeout
 	Global.set_player.emit(self)
 	Global.lights_off.connect(func():
@@ -76,3 +83,9 @@ func _on_feet_body_entered(body):
 	if velocity.y > 0:
 		velocity.y = JUMP_FORCE * 0.8
 		body.queue_free()
+
+func _on_placed_box():
+	box_icon.visible = false
+
+func _on_took_box():
+	box_icon.visible = true
