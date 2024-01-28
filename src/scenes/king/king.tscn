@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c42d2c58m34o6"]
+[gd_scene load_steps=9 format=3 uid="uid://c42d2c58m34o6"]
 
-[ext_resource type="Texture2D" uid="uid://bnuvwfom1smky" path="res://icon.svg" id="1_iv1oh"]
 [ext_resource type="Script" path="res://src/scenes/king/king.gd" id="1_vlvko"]
-[ext_resource type="Texture2D" uid="uid://cnqkjfjpm3vwh" path="res://assets/sprites/crown.png" id="4_cpxtg"]
+[ext_resource type="Texture2D" uid="uid://b2hdirg8210ky" path="res://assets/sprites/ReiSadico.png" id="2_i8yiy"]
 [ext_resource type="Texture2D" uid="uid://cu7lpxqvbiqt4" path="res://assets/sprites/button.png" id="5_o4smg"]
 [ext_resource type="Texture2D" uid="uid://hk1n4033hau3" path="res://assets/sprites/hands.png" id="5_xon8c"]
 
@@ -174,11 +173,7 @@ _data = {
 script = ExtResource("1_vlvko")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_iv1oh")
-
-[node name="Crown" type="Sprite2D" parent="."]
-position = Vector2(-2, -65)
-texture = ExtResource("4_cpxtg")
+texture = ExtResource("2_i8yiy")
 
 [node name="Button" type="Sprite2D" parent="."]
 position = Vector2(-72, 30)
@@ -196,7 +191,7 @@ texture = ExtResource("5_xon8c")
 hframes = 2
 
 [node name="RHand" type="Sprite2D" parent="."]
-position = Vector2(-145, 13)
+position = Vector2(-306, 13)
 texture = ExtResource("5_xon8c")
 flip_h = true
 hframes = 2
