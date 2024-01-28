@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://crpg1edr5d1db" path="res://src/scenes/public/grossoEgg.tscn" id="3_kqnib"]
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
 [ext_resource type="PackedScene" uid="uid://by8swj5cc33u6" path="res://src/scenes/boxes/box_stairs.tscn" id="4_05y1f"]
-[ext_resource type="PackedScene" uid="uid://bngctos3idixx" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
+[ext_resource type="PackedScene" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
 [ext_resource type="Texture2D" uid="uid://b85qo2nh14xjj" path="res://assets/sprites/scenary/CenarioFrente.webp" id="6_pfgh8"]
 [ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
 [ext_resource type="PackedScene" uid="uid://bqniljg3f6uu0" path="res://src/scenes/boxes/box_pile.tscn" id="9_1oalj"]
 [ext_resource type="Script" path="res://src/scenes/ui/ui.gd" id="9_m7muy"]
 [ext_resource type="Script" path="res://src/scenes/traps/lights.gd" id="10_q12el"]
-[ext_resource type="PackedScene" uid="uid://irmwr4ojn30u" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
+[ext_resource type="PackedScene" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
 [ext_resource type="PackedScene" uid="uid://cmmojfh1j80hu" path="res://src/scenes/music_manager/music_manager.tscn" id="11_2bi5m"]
 [ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="12_px06a"]
 [ext_resource type="PackedScene" uid="uid://df8tpoyys28ua" path="res://src/scenes/public/finoEgg.tscn" id="16_00a5l"]
@@ -314,9 +314,3 @@ layout_mode = 2
 text = "Play Again"
 
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
-
-[connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@19549" to="Main/TileMap/@Area2D@19549" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@19550" to="Main/TileMap/@Area2D@19550" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@19551" to="Main/TileMap/@Area2D@19551" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@19552" to="Main/TileMap/@Area2D@19552" method="_on_body_entered"]

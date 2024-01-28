@@ -6,6 +6,7 @@ extends Node2D
 
 signal spawn_enemy
 signal spawn_trap
+signal make_surprise
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("p2_left") and not Global.is_in_cooldown:
@@ -17,11 +18,12 @@ func _physics_process(delta):
 
 func spawn_ahead() -> void:
 	spawn_trap.emit()
+	make_surprise.emit()
 	sfx.pitch_scale = randf_range(0.8, 1.2)
 	sfx.play()
-	
 
 func spawn_behind() -> void:
 	spawn_enemy.emit()
+	make_surprise.emit()
 	sfx.pitch_scale = randf_range(0.8, 1.2)
 	sfx.play()

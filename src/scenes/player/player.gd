@@ -6,8 +6,10 @@ extends CharacterBody2D
 @onready var box_stairs := %BoxStairs
 @onready var box_icon := $BoxIcon
 
+signal player_damaged_make_laugh
+
 const GRAVITY := 50
-const SPEED := 350
+const SPEED := 500
 const JUMP_FORCE := -1500
 
 var invincibility_time := false
@@ -67,6 +69,7 @@ func _physics_process(delta):
 func take_damage(_amount: int = 1) -> void:
 	if invincibility_time: return
 	hp -= _amount
+	player_damaged_make_laugh.emit()
 	flash()
 
 
