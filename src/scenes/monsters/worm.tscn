@@ -1,25 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdxyi56fpkksp"]
+[gd_scene load_steps=8 format=3 uid="uid://bdxyi56fpkksp"]
 
 [ext_resource type="Script" path="res://src/scenes/monsters/worm.gd" id="1_uq0t4"]
-[ext_resource type="Texture2D" uid="uid://lmsxbc4sc00s" path="res://assets/sprites/monsters.png" id="2_lfmb7"]
+[ext_resource type="Texture2D" uid="uid://cr1i7bl13jr0a" path="res://assets/sprites/snake_1.png" id="2_bve6n"]
 [ext_resource type="AudioStream" uid="uid://cng4o74haxi07" path="res://assets/sounds/sfx/snake.ogg" id="3_3hpjp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5qwg"]
-atlas = ExtResource("2_lfmb7")
-region = Rect2(132, 66, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x0owa"]
-atlas = ExtResource("2_lfmb7")
-region = Rect2(198, 66, 66, 66)
+[ext_resource type="Texture2D" uid="uid://d3wyswsq6puwx" path="res://assets/sprites/snake_2.png" id="3_txdwt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xw8vg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g5qwg")
+"texture": ExtResource("2_bve6n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x0owa")
+"texture": ExtResource("3_txdwt")
 }],
 "loop": true,
 "name": &"run",
@@ -27,10 +20,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhuhf"]
-size = Vector2(22, 26)
+size = Vector2(426, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sv12"]
-size = Vector2(16, 30)
+size = Vector2(400, 89)
 
 [node name="Worm" type="CharacterBody2D"]
 collision_layer = 17
@@ -38,7 +31,7 @@ script = ExtResource("1_uq0t4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
-scale = Vector2(0.454545, 0.454545)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xw8vg")
 animation = &"run"
 
@@ -47,11 +40,11 @@ collision_layer = 4
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -1)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_dhuhf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(1, -4.5)
 shape = SubResource("RectangleShape2D_1sv12")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

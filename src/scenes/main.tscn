@@ -9,18 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://by8swj5cc33u6" path="res://src/scenes/boxes/box_stairs.tscn" id="4_05y1f"]
 [ext_resource type="PackedScene" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
 [ext_resource type="Texture2D" uid="uid://b85qo2nh14xjj" path="res://assets/sprites/scenary/CenarioFrente.webp" id="6_pfgh8"]
+[ext_resource type="PackedScene" uid="uid://bngctos3idixx" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
 [ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
 [ext_resource type="PackedScene" uid="uid://bqniljg3f6uu0" path="res://src/scenes/boxes/box_pile.tscn" id="9_1oalj"]
 [ext_resource type="Script" path="res://src/scenes/ui/ui.gd" id="9_m7muy"]
 [ext_resource type="Script" path="res://src/scenes/traps/lights.gd" id="10_q12el"]
-[ext_resource type="PackedScene" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
+[ext_resource type="PackedScene" uid="uid://irmwr4ojn30u" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
 [ext_resource type="PackedScene" uid="uid://cmmojfh1j80hu" path="res://src/scenes/music_manager/music_manager.tscn" id="11_2bi5m"]
 [ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="12_px06a"]
 [ext_resource type="PackedScene" uid="uid://df8tpoyys28ua" path="res://src/scenes/public/finoEgg.tscn" id="16_00a5l"]
 [ext_resource type="PackedScene" uid="uid://dxiiriwd148q1" path="res://src/scenes/public/normalEgg.tscn" id="16_welqy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
-size = Vector2(20, 1079)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6dd4i"]
 resource_name = "Solid"
@@ -32,6 +30,9 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetScenesCollectionSource_6dd4i")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
+size = Vector2(20, 1079)
 
 [sub_resource type="Animation" id="Animation_fi65o"]
 length = 0.001
@@ -216,6 +217,14 @@ position = Vector2(1897, 851)
 unique_name_in_owner = true
 position = Vector2(22, 862)
 
+[node name="TileMap" type="TileMap" parent="Main"]
+tile_set = SubResource("TileSet_ofp0x")
+format = 2
+layer_0/name = "solid"
+layer_0/tile_data = PackedInt32Array(458752, 0, 65536, 458753, 0, 65536, 458754, 0, 65536, 458755, 0, 65536, 458756, 0, 65536, 458757, 0, 65536, 458758, 0, 65536, 458759, 0, 65536, 458760, 0, 65536, 458761, 0, 65536, 458762, 0, 65536, 458763, 0, 65536, 458764, 0, 65536, 458765, 0, 65536, 458766, 0, 65536)
+layer_1/name = "spikes"
+layer_1/tile_data = PackedInt32Array(393217, 0, 131072, 393220, 0, 131072, 393223, 0, 131072, 393226, 0, 131072, 393229, 0, 131072)
+
 [node name="Player" parent="Main" instance=ExtResource("1_4s3sc")]
 unique_name_in_owner = true
 position = Vector2(42, 274)
@@ -238,14 +247,6 @@ shape = SubResource("RectangleShape2D_1t7xc")
 
 [node name="TrapSelector" parent="Main" instance=ExtResource("3_lpelj")]
 position = Vector2(451, 65)
-
-[node name="TileMap" type="TileMap" parent="Main"]
-tile_set = SubResource("TileSet_ofp0x")
-format = 2
-layer_0/name = "solid"
-layer_0/tile_data = PackedInt32Array(458752, 0, 65536, 458753, 0, 65536, 458754, 0, 65536, 458755, 0, 65536, 458756, 0, 65536, 458757, 0, 65536, 458758, 0, 65536, 458759, 0, 65536, 458760, 0, 65536, 458761, 0, 65536, 458762, 0, 65536, 458763, 0, 65536, 458764, 0, 65536, 458765, 0, 65536, 458766, 0, 65536)
-layer_1/name = "spikes"
-layer_1/tile_data = PackedInt32Array(458752, 0, 131072, 458753, 0, 131072, 458754, 0, 131072, 458755, 0, 131072, 458756, 0, 131072, 458757, 0, 131072, 458758, 0, 131072, 458759, 0, 131072, 458760, 0, 131072, 458761, 0, 131072, 458762, 0, 131072, 458763, 0, 131072, 458764, 0, 131072, 458765, 0, 131072, 458766, 0, 131072)
 
 [node name="Marker2D" type="Marker2D" parent="Main"]
 position = Vector2(36, 209)
