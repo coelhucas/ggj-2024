@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbx8iygchkcqa"]
+
+[ext_resource type="Texture2D" uid="uid://dxiw1h1ryuo21" path="res://assets/sprites/menu-bg.png" id="1_0bphc"]
+[ext_resource type="Script" path="res://src/scenes/menu/main_menu.gd" id="1_hdpkb"]
+[ext_resource type="PackedScene" uid="uid://bxwjcuxapq523" path="res://src/scenes/main.tscn" id="2_0vked"]
+[ext_resource type="Texture2D" uid="uid://cumgvn1dsrdw1" path="res://assets/sprites/btn-start.png" id="2_3bno8"]
+[ext_resource type="Texture2D" uid="uid://c4rmiptqk8cc2" path="res://assets/sprites/btn-start-hover.png" id="3_8pxhu"]
+[ext_resource type="AudioStream" uid="uid://c51sg6ccgsn40" path="res://assets/sounds/music/MenuBGM.ogg" id="4_pxs5f"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_hdpkb")
+game_scene = ExtResource("2_0vked")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_0bphc")
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 749.0
+offset_top = 853.0
+offset_right = 1171.0
+offset_bottom = 988.0
+texture_normal = ExtResource("2_3bno8")
+texture_pressed = ExtResource("2_3bno8")
+texture_hover = ExtResource("3_8pxhu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pxs5f")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
