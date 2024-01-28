@@ -46,17 +46,21 @@ func spawn_trap(_pos: Vector2, _dir: int = 1, _selector: Node2D = trap_selector)
 		var _found_spike := false
 		_target_position = Vector2i(_pos.x + _additional_offset.x, SPIKE_COORDINATE)
 		
-		while not _found_spike or _retry_count < 5:
+		while not _found_spike and _retry_count < 5:
 			for spike in get_tree().get_nodes_in_group("spike"):
 				if _target_position == spike.global_position.round().snapped(Vector2.ONE * Global.TILE_SIZE) / Global.TILE_SIZE:
 					_found_spike = true
 					spike.attack()
 			
 			_retry_count += 1
+			
 			if _target_position.x > tilemap.get_used_rect().size.x:
 				_target_position += Vector2.LEFT
 			else:
 				_target_position += Vector2.RIGHT
+			
+			if _retry_count > 5:
+				break
 		
 
 	if _selector.current_trap.kind == Trap.Kind.LIGHT:
