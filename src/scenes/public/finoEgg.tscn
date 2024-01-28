@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://df8tpoyys28ua"]
+
+[ext_resource type="Script" path="res://src/scenes/public/finoEgg.gd" id="1_xxhvq"]
+[ext_resource type="Texture2D" uid="uid://bo6v246ap2j1j" path="res://assets/sprites/audience/fino/OvoFinoComemorandoBigas.webp" id="2_egxi1"]
+[ext_resource type="Texture2D" uid="uid://cjemgcu6boaxs" path="res://assets/sprites/audience/fino/OvoFinoFeliz.webp" id="3_dp0sh"]
+[ext_resource type="Texture2D" uid="uid://cexdf8k1i4g07" path="res://assets/sprites/audience/fino/OvoFinoOlhandoDireita.webp" id="4_krgoy"]
+[ext_resource type="Texture2D" uid="uid://bbdwjwekpg252" path="res://assets/sprites/audience/fino/OvoFinoOlhandoEsquerda.webp" id="5_bgw3j"]
+[ext_resource type="Texture2D" uid="uid://ct1arixwi88s4" path="res://assets/sprites/audience/fino/OvoFinoSurpreso.webp" id="6_kj1rl"]
+[ext_resource type="Texture2D" uid="uid://83xo000wga4y" path="res://assets/sprites/audience/fino/OvoFinoOlhandoPraBaixoBigas.webp" id="7_ov4ii"]
+
+[node name="NormalEgg" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xxhvq")
+
+[node name="OvoFinoComemorandoBigas" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_egxi1")
+
+[node name="OvoFinoFeliz" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dp0sh")
+
+[node name="OvoFinoOlhandoDireita" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_krgoy")
+
+[node name="OvoFinoOlhandoEsquerda" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bgw3j")
+
+[node name="OvoFinoSurpreso" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_kj1rl")
+
+[node name="OvoFinoOlhandoPraBaixoBigas" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ov4ii")

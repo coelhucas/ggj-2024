@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=23 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" path="res://src/scenes/king/selectors/enemy_selector.tscn" id="10_ub53v"]
 [ext_resource type="PackedScene" uid="uid://cmmojfh1j80hu" path="res://src/scenes/music_manager/music_manager.tscn" id="11_2bi5m"]
 [ext_resource type="Texture2D" uid="uid://b1vbjdxnx8abp" path="res://assets/sprites/light.png" id="12_px06a"]
+[ext_resource type="PackedScene" uid="uid://df8tpoyys28ua" path="res://src/scenes/public/finoEgg.tscn" id="16_00a5l"]
 [ext_resource type="PackedScene" uid="uid://dxiiriwd148q1" path="res://src/scenes/public/normalEgg.tscn" id="16_welqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7xc"]
@@ -81,7 +82,7 @@ texture = ExtResource("2_i0h6s")
 [node name="Audience" type="Node2D" parent="Main"]
 
 [node name="NormalEgg" parent="Main/Audience" instance=ExtResource("16_welqy")]
-position = Vector2(1277, 176)
+position = Vector2(588, 322)
 
 [node name="BoxPile" parent="Main" instance=ExtResource("9_1oalj")]
 unique_name_in_owner = true
@@ -192,3 +193,6 @@ layout_mode = 2
 text = "Play Again"
 
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
+
+[node name="NormalEgg" parent="." instance=ExtResource("16_00a5l")]
+position = Vector2(300, 274)
