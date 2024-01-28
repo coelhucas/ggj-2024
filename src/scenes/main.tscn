@@ -256,13 +256,13 @@ position = Vector2(-5, 396.5)
 shape = SubResource("RectangleShape2D_1t7xc")
 
 [node name="TrapSelector" parent="Main" instance=ExtResource("3_lpelj")]
-position = Vector2(451, 65)
+position = Vector2(1300, 217)
 
 [node name="Marker2D" type="Marker2D" parent="Main"]
 position = Vector2(36, 209)
 
 [node name="EnemySelector" parent="Main" instance=ExtResource("10_ub53v")]
-position = Vector2(218, 60)
+position = Vector2(583, 212)
 
 [node name="Illumination" parent="Main" instance=ExtResource("16_fg8y8")]
 
@@ -283,6 +283,7 @@ color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 script = ExtResource("10_q12el")
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("9_m7muy")
 texture_king_win = ExtResource("19_txoo8")
 texture_jester_win = ExtResource("21_a1h2c")

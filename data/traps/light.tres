@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Trap" load_steps=3 format=3 uid="uid://bugrb0hcy30rm"]
 
-[ext_resource type="Texture2D" uid="uid://dcgf7qyqn70uw" path="res://assets/sprites/lamp-icon.png" id="1_yckb5"]
+[ext_resource type="Texture2D" uid="uid://c41d7b125ad0b" path="res://assets/sprites/icon-light.jpg" id="1_mcd82"]
 [ext_resource type="Script" path="res://src/resources/Trap.gd" id="3_3b3fg"]
 
 [resource]
 script = ExtResource("3_3b3fg")
-icon = ExtResource("1_yckb5")
+icon = ExtResource("1_mcd82")
 floating = false
 kind = 4
 custom_y = 0

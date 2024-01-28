@@ -10,9 +10,12 @@ script = ExtResource("1_wp3jm")
 traps = Array[Resource("res://src/resources/Trap.gd")]([ExtResource("5_msilp"), ExtResource("6_7nwtc")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
 texture = ExtResource("8_14acg")
+texture_scale = 4.0

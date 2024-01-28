@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Trap" load_steps=3 format=3 uid="uid://bc31ciimgvthe"]
 
-[ext_resource type="Texture2D" uid="uid://ban2ts7wdicm" path="res://assets/sprites/spike-placeholder.png" id="1_6y2ru"]
+[ext_resource type="Texture2D" uid="uid://bsfxunt2w46vr" path="res://assets/sprites/icon-spike.jpg" id="1_fnbx7"]
 [ext_resource type="Script" path="res://src/resources/Trap.gd" id="1_l51j7"]
 
 [resource]
 script = ExtResource("1_l51j7")
-icon = ExtResource("1_6y2ru")
+icon = ExtResource("1_fnbx7")
 floating = false
 kind = 3
 custom_y = 0
