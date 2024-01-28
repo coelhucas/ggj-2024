@@ -10,14 +10,24 @@ extends Node2D
 @onready var king := $"../../../King"
 @onready var player_node := $"../../../Player"
 
+const AMPL = 5
+const SPEED = 100
+const FREQ = 3
+
 var offset := Global.TILE_SIZE
 var player: Node2D
 var looking_at_arena = true
+var initial_position: Vector2
+var time = 0
+var wave_phase: int
 
 func _ready() -> void:
 	Global.game_over.connect(_on_game_over)
 	king.make_surprise.connect(_on_make_surprise)
 	player_node.player_damaged_make_laugh.connect(_on_player_damaged_make_laugh)
+	
+	initial_position = position
+	wave_phase = randi() % AMPL
 	
 	down.visible = true
 	left.visible = false
@@ -34,6 +44,9 @@ func _ready() -> void:
 func _process(delta):
 	if not is_instance_valid(player):
 		return
+		
+	time += delta
+	position.y = initial_position.y + cos(time * FREQ + wave_phase) * AMPL
 	
 	if looking_at_arena:
 		if player.global_position.x > global_position.x and abs(player.global_position.x - global_position.x) > offset:
