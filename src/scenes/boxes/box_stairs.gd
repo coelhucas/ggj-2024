@@ -18,6 +18,7 @@ func _on_body_entered(body):
 			sfx_drop.play()
 			placed_box.emit()
 			get_child(visible_boxes).visible = true
-			visible_boxes += 1
-			if visible_boxes == Global.MAX_BOXES:
+			get_child(visible_boxes + 1).visible = true
+			visible_boxes += 2
+			if visible_boxes >= Global.MAX_BOXES * 2:
 				Global.game_over.emit(false)

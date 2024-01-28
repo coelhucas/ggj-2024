@@ -1,7 +1,7 @@
 extends Node
 
 const TILE_SIZE := 128
-const MAX_BOXES = 6
+const MAX_BOXES = 3
 
 
 signal set_player(_p)
