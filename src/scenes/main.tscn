@@ -1,13 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=25 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
 [ext_resource type="PackedScene" uid="uid://c42d2c58m34o6" path="res://src/scenes/king/king.tscn" id="2_fadux"]
-[ext_resource type="Texture2D" uid="uid://bxc84yynwj5k2" path="res://assets/sprites/base_art.png" id="2_i0h6s"]
+[ext_resource type="Texture2D" uid="uid://c7syfa226q5e7" path="res://assets/sprites/scenary/CenaTraseira.webp" id="2_j0ud0"]
 [ext_resource type="PackedScene" uid="uid://crpg1edr5d1db" path="res://src/scenes/public/grossoEgg.tscn" id="3_kqnib"]
 [ext_resource type="PackedScene" uid="uid://k7hsdvivpmgm" path="res://src/scenes/king/selectors/trap_selector.tscn" id="3_lpelj"]
 [ext_resource type="PackedScene" uid="uid://by8swj5cc33u6" path="res://src/scenes/boxes/box_stairs.tscn" id="4_05y1f"]
 [ext_resource type="PackedScene" path="res://src/scenes/traps/floor.tscn" id="6_6phtl"]
+[ext_resource type="Texture2D" uid="uid://b85qo2nh14xjj" path="res://assets/sprites/scenary/CenarioFrente.webp" id="6_pfgh8"]
 [ext_resource type="PackedScene" uid="uid://swrlj6gp51u3" path="res://src/scenes/traps/spike.tscn" id="7_lix3d"]
 [ext_resource type="PackedScene" uid="uid://bqniljg3f6uu0" path="res://src/scenes/boxes/box_pile.tscn" id="9_1oalj"]
 [ext_resource type="Script" path="res://src/scenes/ui/ui.gd" id="9_m7muy"]
@@ -75,21 +76,137 @@ _data = {
 [node name="Main" type="Node2D" parent="."]
 script = ExtResource("1_rbhpf")
 
-[node name="Background" type="Sprite2D" parent="Main"]
-position = Vector2(960.75, 540.75)
-scale = Vector2(3.00078, 2.93614)
-texture = ExtResource("2_i0h6s")
+[node name="CenaTraseira" type="Sprite2D" parent="Main"]
+position = Vector2(960, 540)
+texture = ExtResource("2_j0ud0")
 
 [node name="Audience" type="Node2D" parent="Main"]
+position = Vector2(6, 8)
 
-[node name="GrossoEgg" parent="Main/Audience" instance=ExtResource("3_kqnib")]
-position = Vector2(228, 238)
+[node name="Left" type="Node2D" parent="Main/Audience"]
 
-[node name="NormalEgg" parent="Main/Audience" instance=ExtResource("16_welqy")]
-position = Vector2(588, 322)
+[node name="FinoEgg3" parent="Main/Audience/Left" instance=ExtResource("16_00a5l")]
+position = Vector2(299, 180)
 
-[node name="FinoEgg" parent="Main/Audience" instance=ExtResource("16_00a5l")]
-position = Vector2(394, 311)
+[node name="GrossoEgg3" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(213, 195)
+
+[node name="NormalEgg4" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(28, 80)
+
+[node name="NormalEgg3" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(101, 122)
+
+[node name="GrossoEgg" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(48, 207)
+
+[node name="FinoEgg" parent="Main/Audience/Left" instance=ExtResource("16_00a5l")]
+position = Vector2(144, 267)
+
+[node name="GrossoEgg4" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(315, 269)
+
+[node name="NormalEgg6" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(402, 261)
+
+[node name="NormalEgg5" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(386, 349)
+
+[node name="FinoEgg5" parent="Main/Audience/Left" instance=ExtResource("16_00a5l")]
+position = Vector2(505, 355)
+
+[node name="GrossoEgg5" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(443, 375)
+
+[node name="FinoEgg4" parent="Main/Audience/Left" instance=ExtResource("16_00a5l")]
+position = Vector2(314, 378)
+
+[node name="NormalEgg" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(223, 286)
+
+[node name="GrossoEgg7" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(594, 317)
+
+[node name="NormalEgg2" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(556, 382)
+
+[node name="NormalEgg8" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(652, 378)
+
+[node name="FinoEgg2" parent="Main/Audience/Left" instance=ExtResource("16_00a5l")]
+position = Vector2(624, 451)
+
+[node name="GrossoEgg2" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(486, 428)
+
+[node name="GrossoEgg6" parent="Main/Audience/Left" instance=ExtResource("3_kqnib")]
+position = Vector2(702, 438)
+
+[node name="NormalEgg7" parent="Main/Audience/Left" instance=ExtResource("16_welqy")]
+position = Vector2(728, 464)
+
+[node name="Right" type="Node2D" parent="Main/Audience"]
+
+[node name="GrossoEgg" parent="Main/Audience/Right" instance=ExtResource("3_kqnib")]
+position = Vector2(1897, 105)
+
+[node name="NormalEgg" parent="Main/Audience/Right" instance=ExtResource("16_welqy")]
+position = Vector2(1848, 187)
+
+[node name="FinoEgg" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1924, 241)
+
+[node name="FinoEgg3" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1809, 177)
+
+[node name="NormalEgg3" parent="Main/Audience/Right" instance=ExtResource("16_welqy")]
+position = Vector2(1760, 209)
+
+[node name="GrossoEgg3" parent="Main/Audience/Right" instance=ExtResource("3_kqnib")]
+position = Vector2(1662, 254)
+
+[node name="GrossoEgg2" parent="Main/Audience/Right" instance=ExtResource("3_kqnib")]
+position = Vector2(1819, 287)
+
+[node name="FinoEgg2" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1730, 317)
+
+[node name="NormalEgg2" parent="Main/Audience/Right" instance=ExtResource("16_welqy")]
+position = Vector2(1659, 344)
+
+[node name="FinoEgg5" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1511, 373)
+
+[node name="FinoEgg4" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1597, 325)
+
+[node name="GrossoEgg4" parent="Main/Audience/Right" instance=ExtResource("3_kqnib")]
+position = Vector2(1571, 381)
+
+[node name="NormalEgg4" parent="Main/Audience/Right" instance=ExtResource("16_welqy")]
+position = Vector2(1442, 409)
+
+[node name="NormalEgg6" parent="Main/Audience/Right" instance=ExtResource("16_welqy")]
+position = Vector2(1371, 341)
+
+[node name="FinoEgg7" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1318, 362)
+
+[node name="GrossoEgg5" parent="Main/Audience/Right" instance=ExtResource("3_kqnib")]
+position = Vector2(1344, 425)
+
+[node name="NormalEgg5" parent="Main/Audience/Right" instance=ExtResource("16_welqy")]
+position = Vector2(1280, 399)
+
+[node name="FinoEgg6" parent="Main/Audience/Right" instance=ExtResource("16_00a5l")]
+position = Vector2(1261, 505)
+
+[node name="CenarioFrente" type="Sprite2D" parent="Main"]
+position = Vector2(960, 540)
+texture = ExtResource("6_pfgh8")
+
+[node name="King" parent="Main" instance=ExtResource("2_fadux")]
+position = Vector2(1014, 281)
 
 [node name="BoxPile" parent="Main" instance=ExtResource("9_1oalj")]
 unique_name_in_owner = true
@@ -118,9 +235,6 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Wall2"]
 position = Vector2(-5, 396.5)
 shape = SubResource("RectangleShape2D_1t7xc")
-
-[node name="King" parent="Main" instance=ExtResource("2_fadux")]
-position = Vector2(1014, 281)
 
 [node name="TrapSelector" parent="Main" instance=ExtResource("3_lpelj")]
 position = Vector2(451, 65)
@@ -202,17 +316,17 @@ text = "Play Again"
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
 
 [connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67434" to="Main/TileMap/@Area2D@67434" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67435" to="Main/TileMap/@Area2D@67435" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67436" to="Main/TileMap/@Area2D@67436" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67437" to="Main/TileMap/@Area2D@67437" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67438" to="Main/TileMap/@Area2D@67438" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67439" to="Main/TileMap/@Area2D@67439" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67440" to="Main/TileMap/@Area2D@67440" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67441" to="Main/TileMap/@Area2D@67441" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67442" to="Main/TileMap/@Area2D@67442" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67443" to="Main/TileMap/@Area2D@67443" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67444" to="Main/TileMap/@Area2D@67444" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67445" to="Main/TileMap/@Area2D@67445" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67446" to="Main/TileMap/@Area2D@67446" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/TileMap/@Area2D@67447" to="Main/TileMap/@Area2D@67447" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105587" to="Main/TileMap/@Area2D@105587" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105588" to="Main/TileMap/@Area2D@105588" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105589" to="Main/TileMap/@Area2D@105589" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105590" to="Main/TileMap/@Area2D@105590" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105591" to="Main/TileMap/@Area2D@105591" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105592" to="Main/TileMap/@Area2D@105592" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105593" to="Main/TileMap/@Area2D@105593" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105594" to="Main/TileMap/@Area2D@105594" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105595" to="Main/TileMap/@Area2D@105595" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105596" to="Main/TileMap/@Area2D@105596" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105597" to="Main/TileMap/@Area2D@105597" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105598" to="Main/TileMap/@Area2D@105598" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105599" to="Main/TileMap/@Area2D@105599" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@105600" to="Main/TileMap/@Area2D@105600" method="_on_body_entered"]
