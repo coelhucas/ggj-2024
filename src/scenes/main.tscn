@@ -256,13 +256,13 @@ position = Vector2(-5, 396.5)
 shape = SubResource("RectangleShape2D_1t7xc")
 
 [node name="TrapSelector" parent="Main" instance=ExtResource("3_lpelj")]
-position = Vector2(1300, 217)
+position = Vector2(1217, 217)
 
 [node name="Marker2D" type="Marker2D" parent="Main"]
 position = Vector2(36, 209)
 
 [node name="EnemySelector" parent="Main" instance=ExtResource("10_ub53v")]
-position = Vector2(583, 212)
+position = Vector2(679, 212)
 
 [node name="Illumination" parent="Main" instance=ExtResource("16_fg8y8")]
 
@@ -312,3 +312,9 @@ texture_pressed = ExtResource("19_ipvdb")
 texture_hover = ExtResource("20_xopmv")
 
 [node name="MusicManager" parent="." instance=ExtResource("11_2bi5m")]
+
+[connection signal="body_entered" from="Main/TileMap/Spike" to="Main/TileMap/Spike" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@62727" to="Main/TileMap/@Area2D@62727" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@62728" to="Main/TileMap/@Area2D@62728" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@62729" to="Main/TileMap/@Area2D@62729" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMap/@Area2D@62730" to="Main/TileMap/@Area2D@62730" method="_on_body_entered"]

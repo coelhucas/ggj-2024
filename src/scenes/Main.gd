@@ -50,6 +50,7 @@ func spawn_trap(_pos: Vector2, _dir: int = 1, _selector: Node2D = trap_selector)
 			for spike in get_tree().get_nodes_in_group("spike"):
 				if _target_position == spike.global_position.round().snapped(Vector2.ONE * Global.TILE_SIZE) / Global.TILE_SIZE:
 					_found_spike = true
+					await get_tree().create_timer(0.2).timeout
 					spike.attack()
 			
 			_retry_count += 1
