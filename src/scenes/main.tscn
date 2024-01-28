@@ -214,11 +214,11 @@ position = Vector2(1014, 281)
 
 [node name="BoxPile" parent="Main" instance=ExtResource("9_1oalj")]
 unique_name_in_owner = true
-position = Vector2(1897, 851)
+position = Vector2(1796, 858)
 
 [node name="BoxStairs" parent="Main" instance=ExtResource("4_05y1f")]
 unique_name_in_owner = true
-position = Vector2(22, 862)
+position = Vector2(60, 876)
 
 [node name="TileMap" type="TileMap" parent="Main"]
 tile_set = SubResource("TileSet_ofp0x")

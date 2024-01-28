@@ -147,8 +147,7 @@ metadata/_edit_horizontal_guides_ = [-160.0]
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BoxIcon" parent="." instance=ExtResource("2_y4mql")]
-visible = false
-position = Vector2(71, -172)
+position = Vector2(66, -173)
 scale = Vector2(4, 4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

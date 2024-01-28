@@ -1,17 +1,10 @@
-[gd_scene format=3 uid="uid://b8jg4032rcb3e"]
+[gd_scene load_steps=2 format=3 uid="uid://b8jg4032rcb3e"]
+
+[ext_resource type="Texture2D" uid="uid://b7xhurmycqqv" path="res://assets/sprites/CaixaRetangular.webp" id="1_gon4c"]
 
 [node name="BoxIcon" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -3.0
-offset_right = 6.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.47451, 0.376471, 0.298039, 1)
+[node name="CaixaRetangular" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.823529, 0.639216, 1)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("1_gon4c")
