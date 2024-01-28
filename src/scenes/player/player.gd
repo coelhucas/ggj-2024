@@ -7,8 +7,8 @@ extends CharacterBody2D
 @onready var box_icon := $BoxIcon
 
 const GRAVITY := 50
-const SPEED := 200
-const JUMP_FORCE := -1200
+const SPEED := 350
+const JUMP_FORCE := -1500
 
 var invincibility_time := false
 

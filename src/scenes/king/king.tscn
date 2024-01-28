@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c42d2c58m34o6"]
+[gd_scene load_steps=10 format=3 uid="uid://c42d2c58m34o6"]
 
 [ext_resource type="Script" path="res://src/scenes/king/king.gd" id="1_vlvko"]
 [ext_resource type="Texture2D" uid="uid://b2hdirg8210ky" path="res://assets/sprites/ReiSadico.png" id="2_i8yiy"]
+[ext_resource type="AudioStream" uid="uid://7lwoivaryj6a" path="res://assets/sounds/sfx/click.wav" id="5_njkij"]
 [ext_resource type="Texture2D" uid="uid://cu7lpxqvbiqt4" path="res://assets/sprites/button.png" id="5_o4smg"]
 [ext_resource type="Texture2D" uid="uid://hk1n4033hau3" path="res://assets/sprites/hands.png" id="5_xon8c"]
 
@@ -204,3 +205,6 @@ libraries = {
 "": SubResource("AnimationLibrary_fvesa")
 }
 speed_scale = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_njkij")
