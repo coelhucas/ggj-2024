@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bxwjcuxapq523"]
+[gd_scene load_steps=31 format=3 uid="uid://bxwjcuxapq523"]
 
 [ext_resource type="PackedScene" uid="uid://jp7mgugpc8mu" path="res://src/scenes/player/player.tscn" id="1_4s3sc"]
 [ext_resource type="Script" path="res://src/scenes/Main.gd" id="1_rbhpf"]
@@ -20,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://df8tpoyys28ua" path="res://src/scenes/public/finoEgg.tscn" id="16_00a5l"]
 [ext_resource type="PackedScene" uid="uid://dxiiriwd148q1" path="res://src/scenes/public/normalEgg.tscn" id="16_welqy"]
 [ext_resource type="Texture2D" uid="uid://bdnvpwqjfbi6i" path="res://assets/sprites/btn-play-again.png" id="19_ipvdb"]
+[ext_resource type="Texture2D" uid="uid://c34sx6gjmlflf" path="res://assets/sprites/king-victory.png" id="19_txoo8"]
 [ext_resource type="Texture2D" uid="uid://cy00vgmh2hp3d" path="res://assets/sprites/btn-play-again-hover.png" id="20_xopmv"]
+[ext_resource type="Texture2D" uid="uid://bei02waqo4q5x" path="res://assets/sprites/jester-victory.png" id="21_a1h2c"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6dd4i"]
 resource_name = "Solid"
@@ -73,6 +75,8 @@ _data = {
 "RESET": SubResource("Animation_fi65o"),
 "default": SubResource("Animation_i4c2p")
 }
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d58eu"]
 
 [node name="Node" type="Node"]
 
@@ -288,35 +292,29 @@ script = ExtResource("10_q12el")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_m7muy")
+texture_king_win = ExtResource("19_txoo8")
+texture_jester_win = ExtResource("21_a1h2c")
 
-[node name="EndGame" type="CenterContainer" parent="UI"]
-visible = false
+[node name="EndGame" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/EndGame"]
+[node name="Bg" type="TextureRect" parent="UI/EndGame"]
+self_modulate = Color(1, 1, 1, 0.686275)
+material = SubResource("CanvasItemMaterial_d58eu")
 layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("21_a1h2c")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/EndGame/PanelContainer"]
+[node name="BtnRestart" type="TextureButton" parent="UI/EndGame"]
 layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndGame/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="GameOverLabel" type="Label" parent="UI/EndGame/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Game Over"
-
-[node name="VictoryLabel" type="Label" parent="UI/EndGame/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "XXX win!"
-
-[node name="BtnRestart" type="TextureButton" parent="UI/EndGame/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 684.0
+offset_top = 722.0
+offset_right = 1236.0
+offset_bottom = 824.0
 texture_normal = ExtResource("19_ipvdb")
 texture_pressed = ExtResource("19_ipvdb")
 texture_hover = ExtResource("20_xopmv")
