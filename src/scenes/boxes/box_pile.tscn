@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqniljg3f6uu0"]
+[gd_scene load_steps=5 format=3 uid="uid://bqniljg3f6uu0"]
 
 [ext_resource type="Script" path="res://src/scenes/boxes/box_pile.gd" id="1_2v7pg"]
 [ext_resource type="PackedScene" uid="uid://b0gdf0kwatlx1" path="res://src/scenes/boxes/box.tscn" id="1_sintp"]
+[ext_resource type="AudioStream" uid="uid://wac7v3bvyj67" path="res://assets/sounds/sfx/brick_pick.wav" id="3_jq283"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgbed"]
 size = Vector2(42, 42)
@@ -31,5 +32,8 @@ position = Vector2(-71, -33)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-53, -12)
 shape = SubResource("RectangleShape2D_jgbed")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jq283")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
