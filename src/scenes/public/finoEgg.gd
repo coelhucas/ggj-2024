@@ -61,11 +61,13 @@ func set_visibility(
 
 
 func _on_make_surprise():
+	if not is_instance_valid(player): return
 	if player.hp > 0:
 		set_visibility(false,false,false,true,false,false)
 		lock_expression()
 
 func _on_player_damaged_make_laugh():
+	if not is_instance_valid(player): return
 	if player.hp > 0:
 		set_visibility(false,false,false,false,true,false)
 		lock_expression()
